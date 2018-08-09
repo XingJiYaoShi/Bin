@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background-color: #ffb100;
+        }
+
+        .box2 {
+            background-color: #00ff06;
+        }
+
+        .box3 {
+            background-color: #ff041c;
+        }
+    </style>
+</head>
+<body>
+<div class="box box1"></div>
+<div class="box box2"></div>
+<div class="box box3"></div>
+
+<script src="js/drag.js"></script>
+
+<script>
+
+    var oBox1 = document.getElementsByClassName("box")[0];
+    var oBox2 = document.getElementsByClassName("box")[1];
+    var oBox3 = document.getElementsByClassName("box")[2];
+    dragDom(oBox1, 200, 200, function (x, y) {
+        console.log(x, y);
+        return {x: x, y: y}
+    });
+    dragDom(oBox2, 300, 300);
+    dragDom(oBox3, 400, 400);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="1340" height="200" style="background-color:#e77bd8;margin-top: 100px"></canvas>
+    <script>
+        var canvas=document.getElementById("canvas");
+        var context=canvas球.getContext("2d");
+
+        var arr1=new Array();
+        for(var i=1;i<=8;i++){
+            arr1[i]=Math.random()*200;
+        }
+        var wid1=0;
+        for(var i=1;i<=8;i++){
+            wid1+=200;
+            if(arr1.length>=8){
+             if(i==1){
+                 context.beginPath();
+                 context.strokeStyle="#e7c4d6";
+                 context.moveTo(0,arr1[6]);
+                 context.lineTo(200,arr1[i]);
+                 context.stroke();
+                 context.closePath();
+
+             }
+
+                context.beginPath();
+                context.strokeStyle="#e7c4d6";
+                context.moveTo(wid1,arr1[i]);
+                context.lineTo(wid1+200,arr1[i+1]);
+                context.stroke();
+                context.closePath();
+
+                context.beginPath();
+                context.strokeStyle="#e7c4d6";
+                context.fillStyle="#E75EA1";
+                context.arc(wid1,arr1[i],10,0,2*Math.PI,false);
+                context.stroke();
+                context.fill();
+                context.closePath();
+
+            }
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

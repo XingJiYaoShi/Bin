@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box div {
+            display: none;
+            width: 200px;
+            height: 150px;
+            color: #ffffff;
+            background-color: #222222;
+            font-size: 30px;
+            text-align: center;
+            line-height: 150px;
+        }
+        .active {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <button class="active">新闻</button>
+    <button>娱乐</button>
+    <button>八卦</button>
+    <div style="display: block;">新闻</div>
+    <div>娱乐</div>
+    <div>八卦</div>
+</div>
+<script>
+    (function () {
+        new Fn("box")
+    })();
+
+    function Fn(id) {
+        this.oBox=document.getElementById(id);
+        this.oBtn=this.oBox.getElementsByTagName("button");
+        this.oDiv=this.oBox.getElementsByTagName("div");
+        for (var i = 0; i < this.oBtn.length; i++) {
+          this.oBtn[i].index=i;
+          var _this=this;
+          this.oBtn[i].onclick=function () {
+              for (var j = 0; j < _this.oBtn.length; j++) {
+                  _this.oBtn[j].className="";
+                  _this.oDiv[j].style.display="none";
+
+              }
+              _this.oBtn[this.index].className="active";
+              _this.oDiv[this.index].style.display="block";
+          }
+
+        }
+    }
+</script>
+
+</body>
+</html>

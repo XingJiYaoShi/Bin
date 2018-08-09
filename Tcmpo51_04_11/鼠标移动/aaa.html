@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>筱白迩</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 666px;
+            height: 666px;
+            border: 1px solid yellow;
+            margin: 0px auto;
+            box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.7);
+            position: relative;
+        }
+        li{
+            width: 200px;
+            height: 200px;
+            list-style: none;
+            float: left;
+            margin: 10px;
+            border: 1px solid transparent;
+        }
+        li img{
+            width: 200px;
+            height: 200px;
+            box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="image/mm1.jpg"></li>
+        <li><img src="image/mm2.jpg"></li>
+        <li><img src="image/mm3.jpg"></li>
+        <li><img src="image/mm4.jpg"></li>
+        <li><img src="image/mm5.jpg"></li>
+        <li><img src="image/mm6.jpg"></li>
+        <li><img src="image/mm7.jpg"></li>
+        <li><img src="image/mm8.jpg"></li>
+        <li><img src="image/mm9.jpg"></li>
+        <li><img src="image/mm10.jpg"></li>
+
+    </ul>
+</div>
+</body>
+<script src="js/move.js"></script>
+<script type="text/javascript">
+    var aLi = document.getElementsByTagName('li');
+
+    var arr = [];
+    var len = aLi.length;
+    for(var i=0; i<len; i++){
+        arr.push([aLi[i].offsetLeft,aLi[i].offsetTop]);
+    }
+    for(var i=0; i<len; i++){
+        aLi[i].style.position = "absolute";
+        aLi[i].style.left = arr[i][0] + "px";
+        aLi[i].style.top = arr[i][1] + "px";
+        aLi[i].style.margin = 0;
+    }
+    for(var i =0; i<len; i++){
+        aLi[i].index = i;
+        drag(aLi[i]);
+    }
+    var z  =1;
+    function drag(obj){
+        obj.onmousedown = function(e){
+            // var e || window.event;
+            var x1 = e.clientX,
+                y1 = e.clientY;
+
+
+            var l  = obj.offsetLeft,
+                t  = obj.offsetTop;
+            obj.style.zIndex = z++;
+            document.onmousemove = function(e){
+                var e = e || window.event;
+                var _left = e.clientX - x1 +l;
+                var _top = e.clientY - y1 +t;
+
+                obj.style.left = _left + "px";
+                obj.style.top = _top + "px";
+
+                var oLi = nearLi(obj);
+                for(var k=0; k<len;k++){
+                    aLi[k].style.border = "1px solid transparent";
+                }
+                if(oLi){
+                    oLi.style.border = "4px solid yellow";
+                }
+
+            }
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                document.onmouseup = null;
+                var nL = nearLi(obj);
+                var tmp = 0;
+                if(nL){
+                    nL.style.border = "1px solid transparent";
+                    startMove(nL,{left:arr[obj.index][0],top:arr[obj.index][1]});
+                    startMove(obj,{left:arr[nL.index][0],top:arr[nL.index][1]});
+                    tmp = obj.index;
+                    obj.index = nL.index;
+                    nL.index = tmp;
+                }else{
+                    startMove(obj,{left:arr[obj.index][0],top:arr[obj.index][1]});
+                }
+            }
+            return false;
+        }
+    }
+    function impact(obj1,obj2){
+        var T1 = obj1.offsetTop,
+            L1 = obj1.offsetLeft,
+            B1 = T1 + obj1.offsetHeight,
+            R1 = L1 + obj1.offsetWidth;
+        var T2 = obj2.offsetTop,
+            L2 = obj2.offsetLeft,
+            B2 = T2 + obj2.offsetHeight,
+            R2 = L2 + obj2.offsetWidth;
+        if(R1<L2 || B1<T2 || T1>B2 || L1>R2){
+            return false
+        }else{
+            return true;
+        }
+    }
+    function distance(obj1,obj2){
+        var a = obj1.offsetLeft - obj2.offsetLeft;
+        var b = obj1.offsetTop - obj2.offsetTop;
+        return Math.sqrt(a*a+b*b);
+    }
+    function nearLi(obj){
+        var n = 100000;
+        var oLi = "";
+        for(var j=0; j<len; j++){
+            if(impact(obj,aLi[j]) && obj != aLi[j]){
+                var c = distance(obj,aLi[j]);
+                if(c<n){
+                    n = c;
+                    oLi = aLi[j];
+                }
+            }
+
+        }
+        return oLi;
+    }
+</script>
+</html>

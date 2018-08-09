@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="600" style="border: 1px solid #cccccc;display: block;margin: 0 auto;"></canvas>
+
+
+<script>
+    //1:得到canvas对象
+    var canvas = document.getElementById("canvas");
+    //2:得到context对象
+    var context = canvas.getContext("2d");//3d正在开发中
+
+
+    //开始绘制
+    context.beginPath();
+    context.lineWidth = 20;
+    //context.shadowColor = "red";
+    context.strokeStyle = "red";
+    context.moveTo(100, 100);
+    context.lineTo(300, 300);
+    //将状态表现出来
+    context.stroke();
+    context.closePath();
+
+
+    context.beginPath();
+    context.strokeStyle = "blue";
+    context.lineWidth = 10;
+    context.moveTo(200, 100);
+    context.lineTo(400, 400);
+    context.stroke();
+    context.closePath();
+
+
+    //绘制弧线
+    context.beginPath();
+    context.strokeStyle = "black";
+    context.lineWidth = 5;
+    //填充颜色
+    context.fillStyle = "red";
+    context.arc(
+        //圆心坐标 (x,y) 半径
+        600, 200, 50,
+        //起始角度  终止角度
+        0, 2 * Math.PI, false
+        //false:顺时针 true:逆时针
+    );
+    //边线
+    context.stroke();
+    //填充的状态描述
+    context.fill();
+    context.closePath();
+
+    //绘制球球
+
+
+</script>
+</body>
+</html>

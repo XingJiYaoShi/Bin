@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas  id="canvas" width="800" height="600" style="border: 1px solid #cccccc;display: block;margin: 0 auto;"></canvas>
+
+<script>
+
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    context.strokeStyle = "black";
+    context.lineWidth = 2;
+    context.fillStyle = "red";
+    context.arc(
+        85, 85, 20,
+        0, 2 * Math.PI, false
+
+    );
+    context.stroke();
+    context.fill();
+    context.closePath();
+
+
+
+
+    context.beginPath();
+    context.lineWidth = 2;
+    context.strokeStyle = "#cccccc";
+    context.moveTo(100, 100);
+    context.lineTo(300, 300);
+    context.stroke();
+    context.closePath();
+
+
+    context.beginPath();
+    context.strokeStyle = "black";
+    context.lineWidth = 2;
+    context.fillStyle = "red";
+    context.arc(
+        310, 310, 20,
+        0, 2 * Math.PI, false
+
+    );
+    context.stroke();
+    context.fill();
+    context.closePath();
+
+
+</script>
+<script>
+    var x = parseInt(Math.random()*200);
+    alert(x);
+
+</script>
+</body>
+</html>

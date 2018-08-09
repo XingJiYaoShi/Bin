@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/vue.js"></script>
+    <script src="js/vue-resource.js"></script>
+    <!--1:导入第三方
+        vue-resource.js
+    -->
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="word">
+    <!--v-on:  :  -->
+
+    <button :click="getNetData()"></button>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            word: ""
+        },
+        methods: {
+            getNetData: function () {
+                //网络请求
+                this.$http.get("", {word: this.word}).then(function (data) {
+
+                }, function (err) {
+
+                })
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        .form-group {
+            width: 350px;
+            margin: 0 auto;
+            padding: 10px;
+
+        }
+
+        .form-control {
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<form class="form-group">
+    <input type="text" id="name" class="form-control" placeholder="请输入姓名:">
+    <input type="text" id="age" class="form-control" placeholder="请输入年龄:">
+
+</form>
+<div class="form-group">
+    <button class="btn btn-success" id="btnSave">存储</button>
+    <button class="btn btn-danger" id="btnRead">存储</button>
+
+</div>
+
+<script>
+
+    //o : object  s: string a:[]  b:boolean  n:number
+    var oName = document.querySelector("#name");
+    var oAge = document.querySelector("#age");
+    var oBtn1 = document.querySelector("#btnSave");
+    var oBtn2 = document.querySelector("#btnRead");
+    oBtn1.onclick = function () {
+        var name = oName.value;
+        var age = oName.value;
+        var obj = new Person(name, age);
+        //存储 object  -->string
+        var person = JSON.stringify(obj);
+        localStorage.setItem("obj", person);
+    };
+    //面向对象程序  1:Function  Class
+    //2:属性 this.
+    //3:new 调用
+    //4:原型就用原型  方法  工厂模式
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+
+    }
+
+
+    oBtn2.onclick = function () {
+        //
+        var obj = localStorage.getItem("obj");
+        var person = JSON.parse(obj);//string
+        console.log(typeof person);
+        alert(person.name);
+    };
+
+
+</script>
+
+</body>
+
+</html>

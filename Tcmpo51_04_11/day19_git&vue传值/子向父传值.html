@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <!--<script src="js/vue-router.min.js"></script>-->
+</head>
+<body>
+<div id="app">
+
+    <!--3:绑定事件 -->
+    <my-aaa @parse-to-parent="getValue($event)"></my-aaa>
+
+    <h1 v-text="msg"></h1>
+</div>
+
+<template id="aaa">
+    <div>
+        <!--1:-->
+        <button @click="parseValue()">我是按钮</button>
+    </div>
+</template>
+
+
+<script>
+
+    var A = {
+        template: "#aaa",
+        data:function () {
+            return {
+                child: "这是来自子组件的问候"
+            };
+        },
+        methods:{
+            parseValue:function () {
+                //2:将值传到父组件  自定义事件(不能大写)  想传的值
+                this.$emit("parse-to-parent", this.child);
+            }
+
+        }
+    };
+
+    new Vue({
+        el: "#app",
+        data: {
+            msg:""
+        },
+        components: {
+            "my-aaa": A
+
+        },
+        methods:{
+            getValue:function (data) {
+                console.log(data);
+                this.msg = data;
+
+            },
+        }
+    });
+</script>
+</body>
+</html>

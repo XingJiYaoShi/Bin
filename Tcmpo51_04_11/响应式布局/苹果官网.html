@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>苹果官网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font/iconfont.css"/>
+    <style>
+        html{
+            font-size: 10px;
+            background-color: #F7F7F7;
+        }
+        .hander{
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+        }
+        .icon-caidan {
+            color: #ffffff;
+            font-size: 30px;
+            display: none;
+            /*opacity: 0;*/
+            flex: 1;
+            margin-left: 16px;
+            transition: all 2s linear;
+        }
+        .icon-iphone{
+            color: #ffffff;
+            font-size: 30px;
+            flex: 6;
+            text-align: left;
+        }
+        .icon-gouwu{
+            color: #ffffff;
+            font-size: 30px;
+            flex: 1;
+            text-align: right;
+            margin-right: 16px;
+        }
+        .shou{
+            width: 100%;
+            height: auto;
+        }
+        .iPhone{
+            color: black;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .hello{
+            font-size: 25px;
+            text-align: center;
+            position: relative;
+            top: -45px;
+        }
+        .tu{
+            width: 981px;
+            height: 206px;
+            overflow: hidden;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-image: url("image/iPhone1.jpg");
+            margin: 0 auto;
+        }
+        @media screen and (min-width: 800px) and (max-width: 1100px) {
+            .iPhone{
+                font-size: 40px;
+            }
+            .hello{
+                font-size: 20px;
+                position: relative;
+                top: -30px;
+            }
+            .tu{
+                width: 649px;
+                height: 136px;
+                overflow: hidden;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-image: url("image/iPhone2.jpg");
+                margin: 0 auto;
+            }
+        }
+        @media screen and (max-width: 800px) {
+            .icon-caidan {
+                /*opacity: 1;*/
+                display: inline;
+            }
+            .icon-iphone{
+                flex: 1;
+                text-align: center;
+            }
+            .iPhone{
+                font-size: 30px;
+            }
+            .hello{
+                font-size: 15px;
+                position: relative;
+                top: -30px;
+            }
+            .tu{
+                width: 167px;
+                height: 333px;
+                overflow: hidden;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-image: url("image/iPhone3.jpg");
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="hander">
+        <i class="iconfont icon-caidan"></i>
+        <i class="iconfont icon-iphone"></i>
+        <i class="iconfont icon-gouwu"></i>
+    </div>
+    <div class="shou">
+        <p class="iPhone">iPhone X</p>
+        <p class="hello">hello,未来。</p>
+        <div class="tu"></div>
+    </div>
+</div>
+</body>
+</html>

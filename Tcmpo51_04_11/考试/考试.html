@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html{
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        #center {
+            border-radius: 10px 10px 0px 0px;
+            width: 348PX;
+            height: 500px;
+            margin: 30px auto 0;
+            display: flex;
+            border: 1px solid #cccccc;
+            position: relative;
+            justify-content: center;
+        }
+
+        #btm {
+            border-radius: 0px 0px 10px 10px;
+            width: 350PX;
+            background: #000;
+            height: 100px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #cccccc;
+        }
+
+        #content {
+            position: absolute;
+            background: #ff1122;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+
+        .imgList {
+            margin-top: 10px;
+            width: 100%;
+            height: 100%;
+            margin-left: 4px;
+        }
+
+        .imgList li {
+            width: 31.4%;
+            height: 28%;
+            margin-bottom: 8px;
+
+        }
+
+        .imgList li img {
+            width: 100%;
+            height: 100%;
+            -webkit-user-drag: none;
+        }
+
+        #hid {
+            display: none;
+            background: #000;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            position: absolute;
+        }
+
+        #hid_content {
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            bottom: 5px;
+        }
+        #hid_content button{
+            background: #333333;
+            color: #ffffff;
+            display: block;
+            margin: 0 auto 10px;
+            width: 80%;
+            height: 30%;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="init()"><!--窗体加载事件-->
+<div id="center">
+    <ul class="imgList">
+        <li onclick="bigImg(this)"><img src="img/1.jpg" alt=""></li>
+        <li onclick="bigImg(this)"><img src="img/2.jpg" alt=""></li>
+        <li onclick="bigImg(this)"><img src="img/3.jpg" alt=""></li>
+        <li onclick="bigImg(this)"><img src="img/4.jpg" alt=""></li>
+        <li onclick="bigImg(this)"><img src="img/5.jpg" alt=""></li>
+        <li onclick="bigImg(this)"><img src="img/6.jpg" alt=""></li>
+        <li onclick="bigImg(this)"><img src="img/7.jpg" alt=""></li>
+        <!--每一个li都有点击事件this把点击的li给传过去-->
+    </ul>
+    <div id="hid">
+        <div id="hid_content">
+            <button id="sel">选择背景图</button>
+            <button id="con">取消</button>
+        </div>
+    </div>
+</div>
+<div id="btm">
+    <div id="content" onclick="selected()">
+    </div>
+</div>
+<script>
+
+    var hid = document.getElementById("hid");//选择背景图和取消按钮页面
+    var sel = document.getElementById("sel");//选择背景图按钮
+    var con = document.getElementById("con");//取消按钮
+    var lis = document.getElementsByTagName("li");//获取所有的li标签
+    function init() {
+       bigImg(lis[0]);//初始化方法，让第一个图片默认最大
+    }
+    var temp;//临时变量，用于存放变大的li标签
+    function bigImg(im) {//封装后的点击事件im就是传过来需要变大的li标签
+        temp=im;//给temp赋值
+        hide();//变大后把所有的li先给隐藏掉
+        im.style.display = "block";//下边的属性就是把传过来的给显示了并且把它的宽高变成100%
+        im.style.width = "100%";
+        im.style.height = "100%";
+    }
+
+    function selected() {//选择背景图和取消按钮页面
+        hid.style.display="block";//点击后让它显示
+        hid.style.zIndex = "1";//zIndex是让它可以操作在最上边
+    }
+
+    sel.onclick=function () {//选择背景图按钮
+        hid.style.display="none";//点击后让他的父窗体给隐藏掉
+        temp.style.width="31.4%";//让变大的li变回正常
+        temp.style.height="28%";//此方法其实可以写在显示的方法中
+        show();//显示的方法
+    }
+    con.onclick=function () {//取消按钮
+        hid.style.display="none";//点击后让这个页面给隐藏掉
+    }
+    function show() {//封装的显示方法
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].style.display = "inline-block";
+        }
+    }
+    function hide() {//封装后的隐藏所有li标签的方法
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].style.display = "none";
+        }
+    }
+
+</script>
+</body>
+</html>

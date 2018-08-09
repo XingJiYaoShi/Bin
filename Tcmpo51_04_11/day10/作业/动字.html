@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .con {
+            width: 400px;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin: 0 auto;
+        }
+        .txtBox{
+            width: 380px;
+            position: absolute;
+            padding-left: 8px;
+            left: 0px;
+            top: 0;
+        }
+        .bar {
+            width: 10px;
+            height: 600px;
+            background: gainsboro;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .drdap {
+            width: 100%;
+            height: 100px;
+            background: red;
+            border-radius: 10px;
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+<div class="con">
+    <div class="txtBox">
+        1. Android Studio简介 Android Studio是一个基于IntelliJIDEA的新的Android开发环境。与Eclipse ADT插件相似，AndroidStudio提供了集成的Android开发工具用于开发和调试。除了你期望的IntelliJ的能 力，AndroidStudio还提供： · 基于Gradle构建的支持。 · Android专属的重构和快速修复。 · 捕获性能、易用性、版本兼容性等问题。 · 支持ProGuard和应用签名。 · 基于模板的向导来创建常见的Android设计和组件。 · 丰富的布局编辑器，允许你拖放UI组件并在多个屏幕上的预览布局，等等。
+        2. 安装Android Studio
+        1. 从上面下载AndroidStudio安装包。（下载地址：http://developer.android.com/sdk/installing/studio.html译者注） 2. 安装Android Studio和SDK工具： Windows系统：
+        1. 启动下载的EXE文件，android-studio-bundle-version.exe。 2. 按照安装向导安装AndroidStudio。
+        《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+        已知问题： 在某些Windows系统中，没有找到Java的安装启动程序脚本。如果你遇到这样的问题，你需要设置一个环境变量，指向正确的位置。 选择“ 开始“菜单]]> 计算机]]> 系统属性]]> 高级系统属性。然后打开“高级”选项卡]]> 环境变量，并添加新的系统变量JAVA_HOME，指向你的JDK文件夹，例如C：\ Program Files\JAVA\jdk1.7.0_21。 Mac OS X的：
+        3. 打开下载的DMG文件，android-studio-bundle-version.dmg。 4. 拖放AndroidStudio到“应用程序”文件夹中。 已知问题： 根据您的安全设置，当你试图打开Android Studio时，你可能会看到一个警告说，安装包损坏、应将其移至垃圾桶。如果发生这种情况，进入系统偏好设置]] ]]> 安全与隐私，在允许下载的应用程序，选择随时 随地。然后再次打开AndroidStudio。 Linux操作系统：
+            5. 为您的应用程序，解压下载的Tar文件，android-studio-bundle-version.tgz到一个合适的位置。 6. 要启动Android Studio，在终端定位到android-studio/bin/目录，并执行studio.sh。 您可能需要添加android-studio/bin/到你的PATH环境变量，这样就可以从任何目录启动Android Studio。 这就可以了！你已经准备好开始用Android Studio开发应用程序了。 注：在Windows和Mac，Android Studio个人工具和其他的SDK包保存应用程序的目录内。要直接访问这些工具，使用终端导航到应用程序并定位到sdk/目录。例如： Windows: \Users\<user>\AppData\Local\Android\android-studio\sdk\ Mac: /Applications/Android\Studio.app/sdk/ 对于一些已知的问题，查看tools.android.com/knownissues。 3. Android Studio界面元素 3.1 界面简介
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                1.菜单和工具栏:你懂的 2.导航条：编辑文件时帮助定位和导航项目中的文件 3.状态栏：显示当前项目，Android Studio本身的状态，还有别的一些状态相关的一些信息
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                4.编辑器： 你懂的 5.工具窗口：辅助类窗口。Android Studio提供了各式各样的辅助窗口来帮助完成各种任务，如项目管理，代码查找，版本控制等，类似eclipse中VIEW的概念 6.工具窗口栏:位于IDEA界面的上下左右各有一个，摆放着工具窗口显示和隐藏的按键
+                3.2 关于菜单和工具条
+                菜单和工具栏包含了Android Studio中的各种有用的命令，如：（1）打开或者隐藏Android Studio中的界面元素，可以使用菜单栏中的VIEW选项
+                （2）当你想执行一个命令，但忘记去哪里找这个命令的时候，Android Studio提供了一个快捷的方式进行定位，按 command+Shift+A 可以触发一个命令提示界面，输入你想执行命令的前缀，就会列出跟这个前缀相关的一些 命令，选择你需要的执行
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                3.3 关于导航条
+                显示导航条有两种途径： （1）通过VIEW菜单，选择 Navigation Bar 选项 （2）按 Alt+Home.（用该方式打开，导航条显示为浮动形式(windows)）
+                关闭导航条也有两种途径 （1）通过VIEW菜单，取消选择 Navigation Bar 选项 （2）当导航条是浮动状态时候，按ESC键(windows)
+                3.4 关于状态栏
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                3.5 关于工具窗口 每个工具窗口提供了各种不同的视角和编程任务，一些工具窗口总是可见的，一些工具窗口则必须当相关的插件或者facets被激活的时候才是可见的. 控制工具窗口显示或者隐藏的按键分布在工具窗口条上，显示和隐藏状态 通过颜色区分：
+                工具窗口的显示与隐藏是基于工具窗口的摆放组的，每个工具窗口条分为2个组（水平的工具窗口条的左右两边，垂直窗口条的上下两边，可以通过拖坠工具窗口按键来进行摆放组的移动），每个分组只有一个显示的工具窗 口，当选择组中的令一个窗口时，会自动关闭该组原先的窗口
+                3.6 操纵工具窗口 3.6.1 关闭所有的工具窗口
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                1.通过菜单栏中的 Window - Active Tool Window - Hide All Windows 2. command+Shift+F12.
+                3.6.2 保存当前的窗口布局：
+                菜单栏 Window - Store Current Layout as Default 若需要重置窗口布局选择菜单栏  Window - Restore Default Layout
+                3.6.3 窗口工具的查看模式（Viewing Modes） 工具窗口提供了不同的查看模式，用于控制工具窗口的显示形式和表现方式，帮助使用者快速定位到工具窗口，或者最大化编辑区域 1.固定和浮动模式 Floating Mode 当窗口时固定模式时，若同时窗口的模式还是非停泊模式（docked mode未选中）则窗口会占满它所附着的工具窗口条的长度或者高度（取决于工具窗口条是水平的还是垂直的）
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                当窗口时浮动模式(Floating)时，它可以放在屏幕上的任何位置，当这个窗口处于不活动状态时，若同时窗口时寄托模式（ pinned.mode）它会变成半透明状态（透明度取决于Appearance settings中的透明度设置）
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                2.停靠和脱开模式 Docked Mode
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                该模式基于窗口时固定模式(Docked Mode)才起作用 在停靠模式，跟这个窗口相邻的界面元素将环绕着该窗口，调整该窗口的大小会自适应调整相邻窗口的大小 在脱开模式时。该窗口会变成最上层的界面元素，会盖住其他的元素与其相交的部分（除开工具窗口，无法盖住其他的工具窗口，不会存在相交部分，当与其他工具窗口相邻时，无法调整该相邻的边界），重设脱开模式的 窗口大小不会自适应的调整其他元素的大小。 当一个脱开模式的窗口变为不活动状态时，它会自动隐藏。 3.寄托与非寄托模式 Pinned Mode 该模式决定了工具窗口变成不活跃状态时是隐藏还是可见。 Pinned 模式下是可见，unpinned 模式下将会自动隐藏。当然根据别的模式设定有一些例外情况： Undocked 模式的窗口不活跃时，总是被隐藏 Floating 模式的窗口不活跃时，将变成半透明 4.分离模式 Split Mode 该模式决定了同一个工具窗口条中有多少个停靠模式（docked）的窗口可以同时显示（1还是2） 同时工具窗口依据该模式将依附其上的窗口进行分组，分离模式的为一组，非分离模式的为另一组，任何一个时候每个分组中只有一个窗口是可见的 5. 作为标签显示 Show View as Tabs 该模式用于控制有多个内容层需要展示的窗口以何种形式的方式来选择内容层 Tabbed 模式 使用标签页形式
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                非标签页形式，则使用下拉列表的方式进行选择：
+                3.6.4 开启和关闭模式的方法 开启和关闭该模式可以通过窗口的上下的上下文菜单（右键菜单）或者主菜单栏中 Window - Active Tool Window来转换
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                或
+                3.6.5 在工具窗口的快度搜索
+                1.选择所需的工具窗口 2.输入你需要查找内容（文件，类，字段等）的名字，当你输入时，搜索域将出现在该窗口上，并显示你输入的字符 3.输入完毕时，按ENTER，窗口上符合要求的结果将被显示和选择. 按ESC隐藏搜索域
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                4.Android Studio基本操作 4.1 在编辑器中打开文件 打开Project内的文件进行编辑的几种方式:
+                1. 在Project窗口中双击需要编辑的文件。 2. 在Project窗口选择需要编辑的文件，按F4 3. 在Project窗口选择需要编辑的文件，然后右键弹出上下文菜单，选择Jump to Source 4. 使用Go To
+                5. 通过导航条，来选择打开文件： 备注：如果文件类型已经注册，则直接使用编辑器打开，（可以在 Settings 中的 File Types查看已经注册的文件类型）.
+                《    1. Android Studio简介 Android Studio是一个基于IntelliJIDEA的新的Android开发环境。与Eclipse ADT插件相似，AndroidStudio提供了集成的Android开发工具用于开发和调试。除了你期望的IntelliJ的能 力，AndroidStudio还提供： · 基于Gradle构建的支持。 · Android专属的重构和快速修复。 · 捕获性能、易用性、版本兼容性等问题。 · 支持ProGuard和应用签名。 · 基于模板的向导来创建常见的Android设计和组件。 · 丰富的布局编辑器，允许你拖放UI组件并在多个屏幕上的预览布局，等等。
+        2. 安装Android Studio
+        1. 从上面下载AndroidStudio安装包。（下载地址：http://developer.android.com/sdk/installing/studio.html译者注） 2. 安装Android Studio和SDK工具： Windows系统：
+        1. 启动下载的EXE文件，android-studio-bundle-version.exe。 2. 按照安装向导安装AndroidStudio。
+        《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+        已知问题： 在某些Windows系统中，没有找到Java的安装启动程序脚本。如果你遇到这样的问题，你需要设置一个环境变量，指向正确的位置。 选择“ 开始“菜单]]> 计算机]]> 系统属性]]> 高级系统属性。然后打开“高级”选项卡]]> 环境变量，并添加新的系统变量JAVA_HOME，指向你的JDK文件夹，例如C：\ Program Files\JAVA\jdk1.7.0_21。 Mac OS X的：
+        3. 打开下载的DMG文件，android-studio-bundle-version.dmg。 4. 拖放AndroidStudio到“应用程序”文件夹中。 已知问题： 根据您的安全设置，当你试图打开Android Studio时，你可能会看到一个警告说，安装包损坏、应将其移至垃圾桶。如果发生这种情况，进入系统偏好设置]] ]]> 安全与隐私，在允许下载的应用程序，选择随时 随地。然后再次打开AndroidStudio。 Linux操作系统：
+        5. 为您的应用程序，解压下载的Tar文件，android-studio-bundle-version.tgz到一个合适的位置。 6. 要启动Android Studio，在终端定位到android-studio/bin/目录，并执行studio.sh。 您可能需要添加android-studio/bin/到你的PATH环境变量，这样就可以从任何目录启动Android Studio。 这就可以了！你已经准备好开始用Android Studio开发应用程序了。 注：在Windows和Mac，Android Studio个人工具和其他的SDK包保存应用程序的目录内。要直接访问这些工具，使用终端导航到应用程序并定位到sdk/目录。例如： Windows: \Users\<user>\AppData\Local\Android\android-studio\sdk\ Mac: /Applications/Android\Studio.app/sdk/ 对于一些已知的问题，查看tools.android.com/knownissues。 3. Android Studio界面元素 3.1 界面简介
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            1.菜单和工具栏:你懂的 2.导航条：编辑文件时帮助定位和导航项目中的文件 3.状态栏：显示当前项目，Android Studio本身的状态，还有别的一些状态相关的一些信息
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            4.编辑器： 你懂的 5.工具窗口：辅助类窗口。Android Studio提供了各式各样的辅助窗口来帮助完成各种任务，如项目管理，代码查找，版本控制等，类似eclipse中VIEW的概念 6.工具窗口栏:位于IDEA界面的上下左右各有一个，摆放着工具窗口显示和隐藏的按键
+            3.2 关于菜单和工具条
+            菜单和工具栏包含了Android Studio中的各种有用的命令，如：（1）打开或者隐藏Android Studio中的界面元素，可以使用菜单栏中的VIEW选项
+            （2）当你想执行一个命令，但忘记去哪里找这个命令的时候，Android Studio提供了一个快捷的方式进行定位，按 command+Shift+A 可以触发一个命令提示界面，输入你想执行命令的前缀，就会列出跟这个前缀相关的一些 命令，选择你需要的执行
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            3.3 关于导航条
+            显示导航条有两种途径： （1）通过VIEW菜单，选择 Navigation Bar 选项 （2）按 Alt+Home.（用该方式打开，导航条显示为浮动形式(windows)）
+            关闭导航条也有两种途径 （1）通过VIEW菜单，取消选择 Navigation Bar 选项 （2）当导航条是浮动状态时候，按ESC键(windows)
+            3.4 关于状态栏
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            3.5 关于工具窗口 每个工具窗口提供了各种不同的视角和编程任务，一些工具窗口总是可见的，一些工具窗口则必须当相关的插件或者facets被激活的时候才是可见的. 控制工具窗口显示或者隐藏的按键分布在工具窗口条上，显示和隐藏状态 通过颜色区分：
+            工具窗口的显示与隐藏是基于工具窗口的摆放组的，每个工具窗口条分为2个组（水平的工具窗口条的左右两边，垂直窗口条的上下两边，可以通过拖坠工具窗口按键来进行摆放组的移动），每个分组只有一个显示的工具窗 口，当选择组中的令一个窗口时，会自动关闭该组原先的窗口
+            3.6 操纵工具窗口 3.6.1 关闭所有的工具窗口
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            1.通过菜单栏中的 Window - Active Tool Window - Hide All Windows 2. command+Shift+F12.
+            3.6.2 保存当前的窗口布局：
+            菜单栏 Window - Store Current Layout as Default 若需要重置窗口布局选择菜单栏  Window - Restore Default Layout
+            3.6.3 窗口工具的查看模式（Viewing Modes） 工具窗口提供了不同的查看模式，用于控制工具窗口的显示形式和表现方式，帮助使用者快速定位到工具窗口，或者最大化编辑区域 1.固定和浮动模式 Floating Mode 当窗口时固定模式时，若同时窗口的模式还是非停泊模式（docked mode未选中）则窗口会占满它所附着的工具窗口条的长度或者高度（取决于工具窗口条是水平的还是垂直的）
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            当窗口时浮动模式(Floating)时，它可以放在屏幕上的任何位置，当这个窗口处于不活动状态时，若同时窗口时寄托模式（ pinned.mode）它会变成半透明状态（透明度取决于Appearance settings中的透明度设置）
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            2.停靠和脱开模式 Docked Mode
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            该模式基于窗口时固定模式(Docked Mode)才起作用 在停靠模式，跟这个窗口相邻的界面元素将环绕着该窗口，调整该窗口的大小会自适应调整相邻窗口的大小 在脱开模式时。该窗口会变成最上层的界面元素，会盖住其他的元素与其相交的部分（除开工具窗口，无法盖住其他的工具窗口，不会存在相交部分，当与其他工具窗口相邻时，无法调整该相邻的边界），重设脱开模式的 窗口大小不会自适应的调整其他元素的大小。 当一个脱开模式的窗口变为不活动状态时，它会自动隐藏。 3.寄托与非寄托模式 Pinned Mode 该模式决定了工具窗口变成不活跃状态时是隐藏还是可见。 Pinned 模式下是可见，unpinned 模式下将会自动隐藏。当然根据别的模式设定有一些例外情况： Undocked 模式的窗口不活跃时，总是被隐藏 Floating 模式的窗口不活跃时，将变成半透明 4.分离模式 Split Mode 该模式决定了同一个工具窗口条中有多少个停靠模式（docked）的窗口可以同时显示（1还是2） 同时工具窗口依据该模式将依附其上的窗口进行分组，分离模式的为一组，非分离模式的为另一组，任何一个时候每个分组中只有一个窗口是可见的 5. 作为标签显示 Show View as Tabs 该模式用于控制有多个内容层需要展示的窗口以何种形式的方式来选择内容层 Tabbed 模式 使用标签页形式
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            非标签页形式，则使用下拉列表的方式进行选择：
+            3.6.4 开启和关闭模式的方法 开启和关闭该模式可以通过窗口的上下的上下文菜单（右键菜单）或者主菜单栏中 Window - Active Tool Window来转换
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            或
+            3.6.5 在工具窗口的快度搜索
+            1.选择所需的工具窗口 2.输入你需要查找内容（文件，类，字段等）的名字，当你输入时，搜索域将出现在该窗口上，并显示你输入的字符 3.输入完毕时，按ENTER，窗口上符合要求的结果将被显示和选择. 按ESC隐藏搜索域
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            4.Android Studio基本操作 4.1 在编辑器中打开文件 打开Project内的文件进行编辑的几种方式:
+            1. 在Project窗口中双击需要编辑的文件。 2. 在Project窗口选择需要编辑的文件，按F4 3. 在Project窗口选择需要编辑的文件，然后右键弹出上下文菜单，选择Jump to Source 4. 使用Go To
+            5. 通过导航条，来选择打开文件： 备注：如果文件类型已经注册，则直接使用编辑器打开，（可以在 Settings 中的 File Types查看已经注册的文件类型）.
+            《
+            1. Android Studio简介 Android Studio是一个基于IntelliJIDEA的新的Android开发环境。与Eclipse ADT插件相似，AndroidStudio提供了集成的Android开发工具用于开发和调试。除了你期望的IntelliJ的能 力，AndroidStudio还提供： · 基于Gradle构建的支持。 · Android专属的重构和快速修复。 · 捕获性能、易用性、版本兼容性等问题。 · 支持ProGuard和应用签名。 · 基于模板的向导来创建常见的Android设计和组件。 · 丰富的布局编辑器，允许你拖放UI组件并在多个屏幕上的预览布局，等等。
+            2. 安装Android Studio
+            1. 从上面下载AndroidStudio安装包。（下载地址：http://developer.android.com/sdk/installing/studio.html译者注） 2. 安装Android Studio和SDK工具： Windows系统：
+            1. 启动下载的EXE文件，android-studio-bundle-version.exe。 2. 按照安装向导安装AndroidStudio。
+            《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+            已知问题： 在某些Windows系统中，没有找到Java的安装启动程序脚本。如果你遇到这样的问题，你需要设置一个环境变量，指向正确的位置。 选择“ 开始“菜单]]> 计算机]]> 系统属性]]> 高级系统属性。然后打开“高级”选项卡]]> 环境变量，并添加新的系统变量JAVA_HOME，指向你的JDK文件夹，例如C：\ Program Files\JAVA\jdk1.7.0_21。 Mac OS X的：
+            3. 打开下载的DMG文件，android-studio-bundle-version.dmg。 4. 拖放AndroidStudio到“应用程序”文件夹中。 已知问题： 根据您的安全设置，当你试图打开Android Studio时，你可能会看到一个警告说，安装包损坏、应将其移至垃圾桶。如果发生这种情况，进入系统偏好设置]] ]]> 安全与隐私，在允许下载的应用程序，选择随时 随地。然后再次打开AndroidStudio。 Linux操作系统：
+            5. 为您的应用程序，解压下载的Tar文件，android-studio-bundle-version.tgz到一个合适的位置。 6. 要启动Android Studio，在终端定位到android-studio/bin/目录，并执行studio.sh。 您可能需要添加android-studio/bin/到你的PATH环境变量，这样就可以从任何目录启动Android Studio。 这就可以了！你已经准备好开始用Android Studio开发应用程序了。 注：在Windows和Mac，Android Studio个人工具和其他的SDK包保存应用程序的目录内。要直接访问这些工具，使用终端导航到应用程序并定位到sdk/目录。例如： Windows: \Users\<user>\AppData\Local\Android\android-studio\sdk\ Mac: /Applications/Android\Studio.app/sdk/ 对于一些已知的问题，查看tools.android.com/knownissues。 3. Android Studio界面元素 3.1 界面简介
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                1.菜单和工具栏:你懂的 2.导航条：编辑文件时帮助定位和导航项目中的文件 3.状态栏：显示当前项目，Android Studio本身的状态，还有别的一些状态相关的一些信息
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                4.编辑器： 你懂的 5.工具窗口：辅助类窗口。Android Studio提供了各式各样的辅助窗口来帮助完成各种任务，如项目管理，代码查找，版本控制等，类似eclipse中VIEW的概念 6.工具窗口栏:位于IDEA界面的上下左右各有一个，摆放着工具窗口显示和隐藏的按键
+                3.2 关于菜单和工具条
+                菜单和工具栏包含了Android Studio中的各种有用的命令，如：（1）打开或者隐藏Android Studio中的界面元素，可以使用菜单栏中的VIEW选项
+                （2）当你想执行一个命令，但忘记去哪里找这个命令的时候，Android Studio提供了一个快捷的方式进行定位，按 command+Shift+A 可以触发一个命令提示界面，输入你想执行命令的前缀，就会列出跟这个前缀相关的一些 命令，选择你需要的执行
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                3.3 关于导航条
+                显示导航条有两种途径： （1）通过VIEW菜单，选择 Navigation Bar 选项 （2）按 Alt+Home.（用该方式打开，导航条显示为浮动形式(windows)）
+                关闭导航条也有两种途径 （1）通过VIEW菜单，取消选择 Navigation Bar 选项 （2）当导航条是浮动状态时候，按ESC键(windows)
+                3.4 关于状态栏
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                3.5 关于工具窗口 每个工具窗口提供了各种不同的视角和编程任务，一些工具窗口总是可见的，一些工具窗口则必须当相关的插件或者facets被激活的时候才是可见的. 控制工具窗口显示或者隐藏的按键分布在工具窗口条上，显示和隐藏状态 通过颜色区分：
+                工具窗口的显示与隐藏是基于工具窗口的摆放组的，每个工具窗口条分为2个组（水平的工具窗口条的左右两边，垂直窗口条的上下两边，可以通过拖坠工具窗口按键来进行摆放组的移动），每个分组只有一个显示的工具窗 口，当选择组中的令一个窗口时，会自动关闭该组原先的窗口
+                3.6 操纵工具窗口 3.6.1 关闭所有的工具窗口
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                1.通过菜单栏中的 Window - Active Tool Window - Hide All Windows 2. command+Shift+F12.
+                3.6.2 保存当前的窗口布局：
+                菜单栏 Window - Store Current Layout as Default 若需要重置窗口布局选择菜单栏  Window - Restore Default Layout
+                3.6.3 窗口工具的查看模式（Viewing Modes） 工具窗口提供了不同的查看模式，用于控制工具窗口的显示形式和表现方式，帮助使用者快速定位到工具窗口，或者最大化编辑区域 1.固定和浮动模式 Floating Mode 当窗口时固定模式时，若同时窗口的模式还是非停泊模式（docked mode未选中）则窗口会占满它所附着的工具窗口条的长度或者高度（取决于工具窗口条是水平的还是垂直的）
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                当窗口时浮动模式(Floating)时，它可以放在屏幕上的任何位置，当这个窗口处于不活动状态时，若同时窗口时寄托模式（ pinned.mode）它会变成半透明状态（透明度取决于Appearance settings中的透明度设置）
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                2.停靠和脱开模式 Docked Mode
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                该模式基于窗口时固定模式(Docked Mode)才起作用 在停靠模式，跟这个窗口相邻的界面元素将环绕着该窗口，调整该窗口的大小会自适应调整相邻窗口的大小 在脱开模式时。该窗口会变成最上层的界面元素，会盖住其他的元素与其相交的部分（除开工具窗口，无法盖住其他的工具窗口，不会存在相交部分，当与其他工具窗口相邻时，无法调整该相邻的边界），重设脱开模式的 窗口大小不会自适应的调整其他元素的大小。 当一个脱开模式的窗口变为不活动状态时，它会自动隐藏。 3.寄托与非寄托模式 Pinned Mode 该模式决定了工具窗口变成不活跃状态时是隐藏还是可见。 Pinned 模式下是可见，unpinned 模式下将会自动隐藏。当然根据别的模式设定有一些例外情况： Undocked 模式的窗口不活跃时，总是被隐藏 Floating 模式的窗口不活跃时，将变成半透明 4.分离模式 Split Mode 该模式决定了同一个工具窗口条中有多少个停靠模式（docked）的窗口可以同时显示（1还是2） 同时工具窗口依据该模式将依附其上的窗口进行分组，分离模式的为一组，非分离模式的为另一组，任何一个时候每个分组中只有一个窗口是可见的 5. 作为标签显示 Show View as Tabs 该模式用于控制有多个内容层需要展示的窗口以何种形式的方式来选择内容层 Tabbed 模式 使用标签页形式
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                非标签页形式，则使用下拉列表的方式进行选择：
+                3.6.4 开启和关闭模式的方法 开启和关闭该模式可以通过窗口的上下的上下文菜单（右键菜单）或者主菜单栏中 Window - Active Tool Window来转换
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                或
+                3.6.5 在工具窗口的快度搜索
+                1.选择所需的工具窗口 2.输入你需要查找内容（文件，类，字段等）的名字，当你输入时，搜索域将出现在该窗口上，并显示你输入的字符 3.输入完毕时，按ENTER，窗口上符合要求的结果将被显示和选择. 按ESC隐藏搜索域
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                4.Android Studio基本操作 4.1 在编辑器中打开文件 打开Project内的文件进行编辑的几种方式:
+                1. 在Project窗口中双击需要编辑的文件。 2. 在Project窗口选择需要编辑的文件，按F4 3. 在Project窗口选择需要编辑的文件，然后右键弹出上下文菜单，选择Jump to Source 4. 使用Go To
+                5. 通过导航条，来选择打开文件： 备注：如果文件类型已经注册，则直接使用编辑器打开，（可以在 Settings 中的 File Types查看已经注册的文件类型）.
+                《
+                1. Android Studio简介 Android Studio是一个基于IntelliJIDEA的新的Android开发环境。与Eclipse ADT插件相似，AndroidStudio提供了集成的Android开发工具用于开发和调试。除了你期望的IntelliJ的能 力，AndroidStudio还提供： · 基于Gradle构建的支持。 · Android专属的重构和快速修复。 · 捕获性能、易用性、版本兼容性等问题。 · 支持ProGuard和应用签名。 · 基于模板的向导来创建常见的Android设计和组件。 · 丰富的布局编辑器，允许你拖放UI组件并在多个屏幕上的预览布局，等等。
+                2. 安装Android Studio
+                1. 从上面下载AndroidStudio安装包。（下载地址：http://developer.android.com/sdk/installing/studio.html译者注） 2. 安装Android Studio和SDK工具： Windows系统：
+                1. 启动下载的EXE文件，android-studio-bundle-version.exe。 2. 按照安装向导安装AndroidStudio。
+                《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                已知问题： 在某些Windows系统中，没有找到Java的安装启动程序脚本。如果你遇到这样的问题，你需要设置一个环境变量，指向正确的位置。 选择“ 开始“菜单]]> 计算机]]> 系统属性]]> 高级系统属性。然后打开“高级”选项卡]]> 环境变量，并添加新的系统变量JAVA_HOME，指向你的JDK文件夹，例如C：\ Program Files\JAVA\jdk1.7.0_21。 Mac OS X的：
+                3. 打开下载的DMG文件，android-studio-bundle-version.dmg。 4. 拖放AndroidStudio到“应用程序”文件夹中。 已知问题： 根据您的安全设置，当你试图打开Android Studio时，你可能会看到一个警告说，安装包损坏、应将其移至垃圾桶。如果发生这种情况，进入系统偏好设置]] ]]> 安全与隐私，在允许下载的应用程序，选择随时 随地。然后再次打开AndroidStudio。 Linux操作系统：
+                5. 为您的应用程序，解压下载的Tar文件，android-studio-bundle-version.tgz到一个合适的位置。 6. 要启动Android Studio，在终端定位到android-studio/bin/目录，并执行studio.sh。 您可能需要添加android-studio/bin/到你的PATH环境变量，这样就可以从任何目录启动Android Studio。 这就可以了！你已经准备好开始用Android Studio开发应用程序了。 注：在Windows和Mac，Android Studio个人工具和其他的SDK包保存应用程序的目录内。要直接访问这些工具，使用终端导航到应用程序并定位到sdk/目录。例如： Windows: \Users\<user>\AppData\Local\Android\android-studio\sdk\ Mac: /Applications/Android\Studio.app/sdk/ 对于一些已知的问题，查看tools.android.com/knownissues。 3. Android Studio界面元素 3.1 界面简介
+                    《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                    1.菜单和工具栏:你懂的 2.导航条：编辑文件时帮助定位和导航项目中的文件 3.状态栏：显示当前项目，Android Studio本身的状态，还有别的一些状态相关的一些信息
+                    《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                    4.编辑器： 你懂的 5.工具窗口：辅助类窗口。Android Studio提供了各式各样的辅助窗口来帮助完成各种任务，如项目管理，代码查找，版本控制等，类似eclipse中VIEW的概念 6.工具窗口栏:位于IDEA界面的上下左右各有一个，摆放着工具窗口显示和隐藏的按键
+                    3.2 关于菜单和工具条
+                    菜单和工具栏包含了Android Studio中的各种有用的命令，如：（1）打开或者隐藏Android Studio中的界面元素，可以使用菜单栏中的VIEW选项
+                    （2）当你想执行一个命令，但忘记去哪里找这个命令的时候，Android Studio提供了一个快捷的方式进行定位，按 command+Shift+A 可以触发一个命令提示界面，输入你想执行命令的前缀，就会列出跟这个前缀相关的一些 命令，选择你需要的执行
+                    《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                    3.3 关于导航条
+                    显示导航条有两种途径： （1）通过VIEW菜单，选择 Navigation Bar 选项 （2）按 Alt+Home.（用该方式打开，导航条显示为浮动形式(windows)）
+                    关闭导航条也有两种途径 （1）通过VIEW菜单，取消选择 Navigation Bar 选项 （2）当导航条是浮动状态时候，按ESC键(windows)
+                    3.4 关于状态栏
+                    《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                    3.5 关于工具窗口 每个工具窗口提供了各种不同的视角和编程任务，一些工具窗口总是可见的，一些工具窗口则必须当相关的插件或者facets被激活的时候才是可见的. 控制工具窗口显示或者隐藏的按键分布在工具窗口条上，显示和隐藏状态 通过颜色区分：
+                    工具窗口的显示与隐藏是基于工具窗口的摆放组的，每个工具窗口条分为2个组（水平的工具窗口条的左右两边，垂直窗口条的上下两边，可以通过拖坠工具窗口按键来进行摆放组的移动），每个分组只有一个显示的工具窗 口，当选择组中的令一个窗口时，会自动关闭该组原先的窗口
+                    3.6 操纵工具窗口 3.6.1 关闭所有的工具窗口
+                    《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                    1.通过菜单栏中的 Window - Active Tool Window - Hide All Windows 2. command+Shift+F12.
+                    3.6.2 保存当前的窗口布局：
+                    菜单栏 Window - Store Current Layout as Default 若需要重置窗口布局选择菜单栏  Window - Restore Default Layout
+                    3.6.3 窗口工具的查看模式（Viewing Modes） 工具窗口提供了不同的查看模式，用于控制工具窗口的显示形式和表现方式，帮助使用者快速定位到工具窗口，或者最大化编辑区域 1.固定和浮动模式 Floating Mode 当窗口时固定模式时，若同时窗口的模式还是非停泊模式（docked mode未选中）则窗口会占满它所附着的工具窗口条的长度或者高度（取决于工具窗口条是水平的还是垂直的）
+                    《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                    当窗口时浮动模式(Floating)时，它可以放在屏幕上的任何位置，当这个窗口处于不活动状态时，若同时窗口时寄托模式（ pinned.mode）它会变成半透明状态（透明度取决于Appearance settings中的透明度设置）
+                    《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                    2.停靠和脱开模式 Docked Mode
+                    《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                    该模式基于窗口时固定模式(Docked Mode)才起作用 在停靠模式，跟这个窗口相邻的界面元素将环绕着该窗口，调整该窗口的大小会自适应调整相邻窗口的大小 在脱开模式时。该窗口会变成最上层的界面元素，会盖住其他的元素与其相交的部分（除开工具窗口，无法盖住其他的工具窗口，不会存在相交部分，当与其他工具窗口相邻时，无法调整该相邻的边界），重设脱开模式的 窗口大小不会自适应的调整其他元素的大小。 当一个脱开模式的窗口变为不活动状态时，它会自动隐藏。 3.寄托与非寄托模式 Pinned Mode 该模式决定了工具窗口变成不活跃状态时是隐藏还是可见。 Pinned 模式下是可见，unpinned 模式下将会自动隐藏。当然根据别的模式设定有一些例外情况： Undocked 模式的窗口不活跃时，总是被隐藏 Floating 模式的窗口不活跃时，将变成半透明 4.分离模式 Split Mode 该模式决定了同一个工具窗口条中有多少个停靠模式（docked）的窗口可以同时显示（1还是2） 同时工具窗口依据该模式将依附其上的窗口进行分组，分离模式的为一组，非分离模式的为另一组，任何一个时候每个分组中只有一个窗口是可见的 5. 作为标签显示 Show View as Tabs 该模式用于控制有多个内容层需要展示的窗口以何种形式的方式来选择内容层 Tabbed 模式 使用标签页形式
+                    《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                    非标签页形式，则使用下拉列表的方式进行选择：
+                    3.6.4 开启和关闭模式的方法 开启和关闭该模式可以通过窗口的上下的上下文菜单（右键菜单）或者主菜单栏中 Window - Active Tool Window来转换
+                    《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                    或
+                    3.6.5 在工具窗口的快度搜索
+                    1.选择所需的工具窗口 2.输入你需要查找内容（文件，类，字段等）的名字，当你输入时，搜索域将出现在该窗口上，并显示你输入的字符 3.输入完毕时，按ENTER，窗口上符合要求的结果将被显示和选择. 按ESC隐藏搜索域
+                    《Android Studio入门指南》作者：毕小朋 博客：http://blog.csdn.net/wirelessqa
+                    4.Android Studio基本操作 4.1 在编辑器中打开文件 打开Project内的文件进行编辑的几种方式:
+                    1. 在Project窗口中双击需要编辑的文件。 2. 在Project窗口选择需要编辑的文件，按F4 3. 在Project窗口选择需要编辑的文件，然后右键弹出上下文菜单，选择Jump to Source 4. 使用Go To
+                    5. 通过导航条，来选择打开文件： 备注：如果文件类型已经注册，则直接使用编辑器打开，（可以在 Settings 中的 File Types查看已经注册的文件类型）.
+                    《
+
+
+
+
+
+
+
+    </div>
+
+    <div class="bar">
+        <div class="drdap"></div>
+    </div>
+</div>
+
+
+<script >
+        var con = document.querySelector(".con");
+        var txtBox = document.querySelector(".txtBox");
+        var bar = document.querySelector(".bar");
+        var drdap = document.querySelector(".drdap");
+
+
+        drdap.style.height = con.offsetHeight / txtBox.offsetHeight * con.offsetHeight + "px";
+
+        drdap.onmousedown = function (ev) {
+
+            var oEvent = ev || event;
+            var disy = oEvent.clientY - drdap.offsetTop;
+
+            document.onmousemove = function (ev) {
+
+                var cliY = ev.clientY-disy;
+                if (cliY<0) {
+                    cliY = 0;
+                }
+                if(cliY>bar.offsetHeight-drdap.offsetHeight){
+                    cliY = bar.offsetHeight-drdap.offsetHeight;
+                }
+
+                drdap.style.top = cliY + "px";
+                var scalY = cliY / (bar.offsetHeight-drdap.offsetHeight);
+                txtBox.style.top = scalY * (con.offsetHeight - txtBox.offsetHeight ) + 'px'
+            };
+            document.onmouseup = function () {
+                document.onmousemove = null;
+            }
+
+        }
+
+</script>
+
+
+</body>
+</html>

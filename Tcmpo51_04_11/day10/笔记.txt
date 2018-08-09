@@ -1,0 +1,38 @@
+回顾:
+  js:
+    1:基本数据类型
+      number string boolean object(null/[]) undefined
+      isNan:是不是不是数字  a  = 10
+      typeof: 数据类型  ""  10  []  function(){}
+      if()             false true true false
+    2:
+      ecma: 语法
+      dom : document
+        document.get...
+        querySelector("#id/.class")
+      bom : 浏览器
+    3:事件
+      点击:onclick
+      鼠标:onmouseover
+           up
+           down
+      双击:onbdlclick
+
+      完美拖拽框架
+      不管几个  100个
+      js:函数
+        参数:(id/dom,left,top,返回结果)//100  100
+
+
+    4:高级编程
+    5:面向对象
+
+  今晚:
+    照片墙
+  回家:
+    属性
+    3:
+    2:滚动条
+  前端项目
+    个人 : 页面
+

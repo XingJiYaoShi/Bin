@@ -1,0 +1,79 @@
+<!doctype html><!--声明文档类型:html-->
+<html><!--超文本标记语言  根目录节点标签-->
+	<head><!--头部:非可视化标签-->
+		<meta charset="utf-8"><!--字符编码:国际编码-->
+		<title>3D立方体-玄武老师</title>
+		<meta name="description" content="描述:对网页文档的大概的介绍">
+		<!--关键词:提供给搜索引擎搜索网站使用-->
+		<meta name="keywords" content="关键词1,关键词2">
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			body{
+				perspective:1000px;
+			}
+			#cube{
+				position:relative;
+				width:200px;
+				height:200px;
+				margin:300px auto;
+				transform-origin:50% 50% -101px;
+				/*设置3D的环境*/
+				transform-style:preserve-3d;
+				transition:2s;/*css3动画过渡*/
+			}
+			#cube div{
+				position:absolute;
+				left:0;
+				top:0;
+				width:200px;
+				height:200px;
+				border:2px solid red;
+			}
+			#cube div:nth-child(1){/*css3结构伪类选择器*/
+				top:-202px;
+				/*默认的旋转中心:X方向 Y方向(宽高的50%) Z
+				transform-origin:50% 50% 0;*/
+				transform-origin:bottom;
+				/*css3变换:围绕X轴旋转*/
+				transform:rotateX(90deg);
+			}
+			#cube div:nth-child(2){
+				top:202px;
+				transform-origin:top;
+				transform:rotateX(-90deg);
+			}
+			#cube div:nth-child(3){
+				left:-202px;
+				transform-origin:right;
+				transform:rotateY(-90deg);
+			}
+			#cube div:nth-child(4){
+				left:202px;
+				transform-origin:left;
+				transform:rotateY(90deg);
+			}
+			#cube div:nth-child(5){
+				
+			}
+			#cube div:nth-child(6){
+				transform:translateZ(-202px);
+			}
+			#cube:hover{
+				transform:rotateY(360deg);
+			}
+		</style>
+	</head>
+	<body><!--身体 可视化标签-->
+		<div id="cube">
+			<div>上</div>
+			<div>下</div>
+			<div>左</div>
+			<div>右</div>
+			<div>前</div>
+			<div>后</div>
+		</div>
+	</body>
+</html>

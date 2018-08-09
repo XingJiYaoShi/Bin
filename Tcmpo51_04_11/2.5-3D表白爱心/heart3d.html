@@ -1,0 +1,139 @@
+<!doctype html><!--声明文档类型:html-->
+<html><!--超文本标记语言  根目录节点标签-->
+	<head><!--头部:非可视化标签-->
+		<meta charset="utf-8"><!--字符编码:国际编码-->
+		<title>3D爱心-玄武老师</title>
+		<meta name="description" content="描述:对网页文档的大概的介绍">
+		<!--关键词:提供给搜索引擎搜索网站使用-->
+		<meta name="keywords" content="关键词1,关键词2">
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			body{
+				background:white;
+			}
+			#heart3d{
+				position:relative;
+				width:100px;
+				height:160px;
+				margin:200px auto;
+				transform-style:preserve-3d;
+				/*css3自定义动画:名称 时间 匀速 无限重复*/
+				animation:rot 10s linear infinite;
+			}
+			@keyframes rot{
+				from{transform:rotateY(0deg) rotateX(0deg)}
+				to{transform:rotateY(360deg) rotateX(360deg)}
+			}
+			#heart3d div.heart{
+				position:absolute;
+				left:0;
+				top:0;
+				width:100px;
+				height:160px;
+				border:2px solid red;
+				border-left:0;
+				border-bottom:0;
+				/*
+					顺时针方向
+					斜杠前面是水平方向
+					斜杠后面是竖直方向
+				border-radius:50% 40% 30% 10%/10% 30% 40% 50%;*/
+				border-radius:50% 50% 0/40% 50% 0;
+			
+			}
+			#cube{
+				position:relative;
+				width:50px;
+				height:50px;
+				transform-style:preserve-3d;
+				transform:translateX(25px) translateY(50px) translateZ(25px);
+			}
+			#cube div{
+				position:absolute;
+				left:0;
+				top:0;
+				width:50px;
+				height:50px;
+			}
+			#cube div:nth-child(1){/*css3结构伪类选择器*/
+				top:-50px;
+				transform-origin:bottom;
+				/*css3变换:围绕X轴旋转*/
+				transform:rotateX(90deg);
+			}
+			#cube div:nth-child(2){
+				top:50px;
+				transform-origin:top;
+				transform:rotateX(-90deg);
+			}
+			#cube div:nth-child(3){
+				left:-50px;
+				transform-origin:right;
+				transform:rotateY(-90deg);
+			}
+			#cube div:nth-child(4){
+				left:50px;
+				transform-origin:left;
+				transform:rotateY(90deg);
+			}
+			#cube div:nth-child(5){
+				
+			}
+			#cube div:nth-child(6){
+				transform:translateZ(-50px);
+			}
+			#cube div img{
+				width:50px;
+				height:50px;
+			}
+
+			/*
+				为什么大企业需要标准规范？
+				1、提高代码的可维护利用性
+					命名规范 书写格式规范 文档结构注释清晰
+				2、提高网站的加载性能
+					(1)减少文件的大小
+						文件压缩 代码压缩 ajax异步加载(减少单次请求的文件数量)
+					(2)减少向服务器的请求次数
+						精灵图 图片懒加载 瀑布流懒加载
+					(3)代码性能优化
+						css的书写顺序
+						能用css实现的效果就不要用js
+						js的代码性能优化
+			*/
+		</style>
+	</head>
+	<body><!--身体 可视化标签-->
+		<div id="heart3d">123
+			<div id="cube">
+				<div><img src="images/1.jpg"></div>
+				<div><img src="images/2.jpg"></div>
+				<div><img src="images/3.jpg"></div>
+				<div><img src="images/4.jpg"></div>
+				<div><img src="images/5.jpg"></div>
+				<div><img src="images/6.jpg"></div>
+			</div>
+			321
+		</div>
+		<script type="text/javascript">
+			/*
+				var heart3d 自定义一变量来存储元素
+				在document文档里面来by通过Id名get获取Element元素
+				document.getElementById()
+			*/
+			var heart3d = document.getElementById("heart3d");
+			for (var i=0;i<36 ;i++ )
+			{
+				//创建div标签元素
+				var oDiv = document.createElement("div");
+				oDiv.className = "heart";
+				oDiv.style.transform = "rotateY("+i*10+"deg) rotateZ(45deg) translateX(30px)";
+				//添加子元素
+				heart3d.appendChild(oDiv)
+			}
+		</script>
+	</body>
+</html>

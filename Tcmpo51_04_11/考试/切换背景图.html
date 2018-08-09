@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+     #main{
+         height: 800px;
+         width: 500px;
+         display: flex;
+         justify-content: end;
+         flex-direction: column;
+         /*overflow: hidden;*/
+         border: 1px solid  #69ffcc;
+         margin: 0 auto;
+
+     }
+        #top{
+            position: relative;
+            width: 100%;
+            height: 80%;
+            background-image: url("img/1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+#bottom{
+border-top: 3px solid yellow;
+    background-color: #000000;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#btn{
+    display: inline-block;
+    background-color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+
+
+
+}
+#btn_2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility:hidden;
+}
+        #qie{
+            background-color: #cceeff;
+            display: block;
+            height: 50px;
+            width: 100%;
+           text-align: center;
+            line-height: 50px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        #qu{
+            margin-top: 3px;
+            background-color: #cceeff;
+            display: block;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        #qu:hover{
+            cursor: pointer;
+        }
+        #qie:hover{
+            cursor: pointer;
+        }
+        #btn:hover{
+            cursor: pointer;
+        }
+        #tu{
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap-reverse;
+            visibility: hidden;
+
+
+
+        }
+        img{
+
+            margin-top: 10px;
+        }
+        #zhao{
+            width: 100%;
+            height: 100%;
+            background-color:#cccccc;
+            opacity:0.8;
+            z-index:5;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="top">
+        <div id="zhao">
+        <div id="tu">
+            <img class="image img1" src="img/1.jpg" width="130" height="180">
+            <img class="image img2" src="img/2.jpg" width="130" height="180">
+            <img class="image img3" src="img/3.jpg" width="130" height=180"">
+            <img class="image img4" src="img/4.jpg" width="130" height=180"">
+            <img class="image img5" src="img/5.jpg" width="130" height="180">
+            <img class="image img6" src="img/6.jpg" width="130" height="180">
+
+        </div>
+
+        </div>
+        <div id="btn_2">
+        <span id="qie" onclick="tu()">切换背景图</span>
+        <span id="qu" onclick="quxiao()">取消</span>
+        </div>
+    </div>
+    <div id="bottom">
+        <span id="btn" onclick="btn()"></span>
+
+    </div>
+
+</div>
+<script src="js.js"></script>
+<script>
+
+    var btn_2= document.getElementById("btn_2");
+    var zhao=document.getElementById("zhao");
+    // var  quxiao=document.getElementById("qu");
+    var img=document.getElementById("tu");
+    var img1 = document.getElementsByClassName("img")[0];
+    var img2 = document.getElementsByClassName("img")[1];
+    var img3 = document.getElementsByClassName("img")[2];
+    var img4 = document.getElementsByClassName("img")[3];
+    var img5 = document.getElementsByClassName("img")[4];
+    var img6 = document.getElementsByClassName("img")[5];
+    dragDom(img1,1,img);
+    dragDom(img2,2,img);
+    dragDom(img3,3,img);
+    dragDom(img4,4,img);
+    dragDom(img5,5,img);
+    dragDom(img6,6,img);
+    function btn() {
+
+        img.style.visibility="hidden";
+            btn_2.style.visibility="visible";
+            zhao.style.backgroundColor="#cccccc";
+            zhao.style.opacity=0.5;
+            zhao.style.zIndex=-1;
+    }
+    function quxiao() {
+        img.style.visibility="hidden";
+        btn_2.style.visibility="hidden";
+        zhao.style.visibility="hidden";
+
+    }
+    function  tu() {
+        img.style.visibility="visible";
+        zhao.style.visibility="hidden";
+
+    }
+</script>
+</body>
+</html>

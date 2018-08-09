@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+
+            list-style: none;
+        }
+        #box{
+
+            width:400px;
+            height: 400px;
+            margin:50px auto 0;
+            perspective: 2000px;
+            position: relative;
+        }
+        #box ul{
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation:  DongHua 5s linear infinite alternate;
+        }
+        #box ul li{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        #box ul li img{
+            width: 100%;
+            height: 100%;
+        }
+       /* #box ul:hover{
+            transform: rotateY(720deg)  rotateX(630deg);
+
+        }*/
+        @keyframes  DongHua{
+            from{
+                width: 400px;
+                height: 400px;
+                background-size:400px 400px ;
+                margin:50px auto;
+                transform: rotateY(720deg)  rotateX(630deg);
+            }
+            to{
+                width: 400px;
+                height: 400px;
+                background-size:400px 400px ;
+                margin:50px auto;
+                transform: rotateY(-720deg)  rotateX(-630deg););
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+<ul>
+    <li style="transform: rotateY(90deg) translateZ(200px)"><img src="image/1.jpg" alt=""></li>
+    <li style="transform: rotateY(-90deg) translateZ(200px)"><img src="image/2.jpg" alt=""></li>
+    <li style="transform: rotateX(90deg) translateZ(200px)"><img src="image/3.jpg" alt=""></li>
+    <li style="transform: rotateX(-90deg) translateZ(200px)"><img src="image/4.jpg" alt=""></li>
+    <li style="transform:translateZ(-200px)"><img src="image/5.jpg" alt=""></li>
+    <li style="transform:translateZ(200px)"><img src="image/6.jpg" alt=""></li>
+</ul>
+</div>
+</body>
+</html>

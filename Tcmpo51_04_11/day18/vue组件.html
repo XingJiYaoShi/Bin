@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+
+    </head>
+    <body>
+    <div id="app">
+        <my-aaa></my-aaa>
+        <my-bbb></my-bbb>
+    </div>
+
+
+    <template id="aaa">
+    <div>
+        <h1>我是模块1</h1>
+    </div>
+</template>
+
+<template id="bbb">
+    <div>
+        <h2>{{result}}</h2>
+        <h1 style="background-color: chartreuse">我是模块2</h1>
+    </div>
+</template>
+
+<script>
+
+    var BBB = {
+        template:"#bbb",
+        data:function () {
+            result:"23123";
+        },
+
+
+    };
+
+    new Vue({
+        el: "#app",
+        data: {
+
+
+        },
+        methods: {
+
+        },
+
+        //组件
+        components:{
+            "my-aaa":{
+                //1:template:"#myAA"
+                template:"#aaa"
+            },
+            "my-bbb":BBB
+        }
+    })
+</script>
+</body>
+</html>

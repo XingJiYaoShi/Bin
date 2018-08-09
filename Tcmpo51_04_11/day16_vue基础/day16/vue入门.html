@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--1:导入-->
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<!--2:div-->
+<div id="app">
+    <!--胡子语法-->
+    <h1>{{msg}}</h1>
+    <p v-html="world"></p>
+    <input type="text" v-model="msg">
+    <p style="width: 100px;height: 100px;background: #000;" v-if="isShow"></p>
+    <button v-on:click="myClick()">点我啊</button>
+    <p v-html="result"></p>
+    <ul>
+        <!--下标-->
+        <li v-for="(item,index) in result" v-on:click="food(index)">{{item}},{{index}}</li>
+    </ul>
+    <input type="text" v-model="food1">
+    <button v-on:click="addfood()">添加菜品</button>
+</div>
+<!--3:-->
+<script>
+    // {name:xxx,}:对象
+    new Vue({
+        //1:关联id
+        el: "#app",
+        //2:数据源
+        data: {
+            msg: "hello world",
+            isShow: true,
+            world: "<h1 style='color: pink;'>hello world</h1>",
+            result: ["陈奎寿司", "杜金鸡蛋汤", "白泽牌面筋", "赵志超锅巴", "方杰鹏饺子", "张海潮阿姨卡布奇诺", "长青竹烤冷面"],
+            food1:""
+        },
+        methods: {
+            myClick: function () {
+                this.isShow = !this.isShow;
+            },
+            food: function (index) {
+                alert("来一份:" + this.result[index]);
+            },
+            addfood:function () {
+                this.result.push(this.food1)
+            }
+        }
+    });
+
+    //1:数据绑定
+    //2:指令
+    // {{}}  v-html:超文本  v-text
+    // v-model:双向绑定
+    // v-if / v-show
+    // v-on : 事件
+    // v-for : 一堆数据
+    // v-bind :绑定 属性
+
+
+</script>
+</body>
+</html>

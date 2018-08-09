@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/vue.js"></script>
+    <script src="js/vue-resource.js"></script>
+    <!--1:导入第三方
+        vue-resource.js
+    -->
+
+    <style>
+        #list li {
+            list-style: none;
+            width: 400px;
+            height: 50px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            line-height: 50px;
+            text-align: center;
+            margin: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="word">
+    <button @click="getNetData()">请求</button>
+    <audio :src="url_1" autoplay="autoplay" controls="controls"></audio>
+    <ul>
+        <li v-for="(item,index) in result">{{item.title}}</li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            word:"",
+            result:[],
+            url_1:"",
+
+        },
+        methods:{
+            getNetData:function () {
+                this.$http.get("http://localost:8080/mmm",{moved:this.word}).then(function (data) {
+                    this.result=data.data;
+                },function (err) {
+                    console.log(err)
+                })
+            },
+            playItem:function (index) {
+                this.url_1=this.result[index].url_1;
+            }
+
+        }
+    })
+
+</script>
+</body>
+</html>

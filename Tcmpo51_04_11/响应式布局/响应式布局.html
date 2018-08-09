@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>响应式布局</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-size:10px;
+        }
+        #box{
+            width: 100%;
+            height: 50px;
+            background-color: red;
+            transition:all 2s linear ;
+
+
+        }
+        .icon-daohang{
+            display: none;
+            font-size: 30px;
+            color: #ffffff;
+            opacity: 0;
+            margin-left: 16px;
+        }
+        .icon-iconfontapple{
+            margin-left: 16px;
+            font-size: 30px;
+            color: #ffffff;
+
+        }
+        .icon-gouwudai{
+            float: right;
+            font-size: 30px;
+            color: #ffffff;
+            margin-right: 16px;
+        }
+        h2{
+            font-size: 4rem;
+        }
+        h3{
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        #content{
+            margin-top: 20px;
+            display: flex;
+            flex-direction:column;
+            text-align: center;
+            width: auto;
+            height: auto;
+        }
+        #content img{
+            width: 80%;
+            height: 80%;
+            margin: 0 auto;
+        }
+        #iphone_x_small{
+            display: none;
+        }
+        #iphone_x_large{
+            display:block;
+        }
+
+
+
+
+
+
+
+        @media screen and (min-width:1000px) and (max-width:1200px){
+            #box{
+                background-color: #1b12ff;
+            }
+        }
+        @media screen and (min-width:800px) and (max-width:1000px){
+            #box{
+                background-color: #17ff2d;
+
+            }
+
+        }
+        @media screen and (max-width:800px){
+            #box{
+                background-color: #000000;
+            }
+            #box>div{
+                display: flex;
+                justify-content: space-between;
+            }
+            .icon-daohang{
+                display: inline;
+                font-size: 30px;
+                color: #ffffff;
+                opacity: 1;
+            }
+            h2{
+                font-size: 2rem;
+            }
+            h3{
+                font-size: 1rem;
+            }
+            #iphone_x_large{
+                display: none;
+            }
+            #iphone_x_small{
+                display: inline;
+            }
+            #content img{
+                width: 40%;
+                height: 50%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div>
+    <i class="iconfont icon-daohang"></i>
+    <i class="iconfont icon-iconfontapple"></i>
+    <i class="iconfont icon-gouwudai"></i>
+    </div>
+    <div id="content">
+        <h2>iPhone X</h2>
+        <h3>hello，未来。</h3>
+        <img id="iphone_x_large" src="image/iphone_x_large.jpg">
+        <img  id="iphone_x_small" src="image/iphone_x_small.jpg">
+    </div>
+</div>
+</body>
+</html>

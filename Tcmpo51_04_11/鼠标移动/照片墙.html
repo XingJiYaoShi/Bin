@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>照片墙</title>
+    <style>
+        body{
+            background: url(image/25561d2f3e887c7.jpg)  top center fixed;
+            background-size: 100% auto;
+        }
+        .content{
+            width: 100%;
+            height: 1200px;
+            overflow: hidden;
+            position: relative;
+        }
+        img{
+            z-index: 1;
+            width: 20%;
+            height: auto;
+            position: absolute;
+            padding: 10px 10px 15px 10px;
+            background: #ffffff;
+            border: 1px solid #CCCCCC;
+            user-select: none;
+            -webkit-user-drag: none;
+            /*-moz-transition: 0.5s;*/
+            /*-webkit-transition: 0.5s;*/
+            /*transition: 0.5s;*/
+        }
+        img:hover{
+            /*z-index: 2;*/
+            /*transform: scale(1.5);*/
+            /*-moz-transform: scale(1.5) ;*/
+            /*-webkit-transform: scale(1.5) ;*/
+            /*box-shadow: -10px 10px 20px #000000;*/
+            /*-moz-box-shadow: -10px 10px 20px #000000;*/
+            /*-webkit-box-shadow: -10px 10px 20px #000000;*/
+        }
+        .pic1{
+            transform: rotate(20deg);
+        }
+        .pic2{
+            transform: rotate(-10deg);
+        }
+        .pic3{
+            transform: rotate(-20deg);
+        }
+        .pic4{
+            transform: rotate(10deg);
+        }
+        .pic5{
+            transform: rotate(-45deg);
+        }
+        .pic6{
+            transform: rotate(15deg);
+        }
+        .pic7{
+            transform: rotate(-15deg);
+        }
+        .pic8{
+            transform: rotate(15deg);
+        }
+        .pic9{
+            transform: rotate(-25deg);
+        }
+        .pic10{
+            width: 35%;
+            height: auto;
+
+        }
+        img:hover{
+
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+<p class="content">
+    <img class="pic pic1" src="image/mm1.jpg" />
+    <img class="pic pic2" src="image/mm2.jpg" />
+    <img class="pic pic3" src="image/mm3.jpg" />
+    <img class="pic pic4" src="image/mm4.jpg" />
+    <img class="pic pic5" src="image/mm5.jpg" />
+    <img class="pic pic6" src="image/mm6.jpg" />
+    <img class="pic pic7" src="image/mm7.jpg" />
+    <img class="pic pic8" src="image/mm8.jpg" />
+    <img class="pic pic9" src="image/mm9.jpg" />
+    <img class="pic pic10" src="image/mm10.jpg" />
+</p>
+
+<script src="js/drag.js"></script>
+
+<script>
+    var oPic1 = document.getElementsByClassName("pic")[0];
+    var oPic2 = document.getElementsByClassName("pic")[1];
+    var oPic3 = document.getElementsByClassName("pic")[2];
+    var oPic4 = document.getElementsByClassName("pic")[3];
+    var oPic5 = document.getElementsByClassName("pic")[4];
+    var oPic6 = document.getElementsByClassName("pic")[5];
+    var oPic7 = document.getElementsByClassName("pic")[6];
+    var oPic8 = document.getElementsByClassName("pic")[7];
+    var oPic9 = document.getElementsByClassName("pic")[8];
+    var oPic10 = document.getElementsByClassName("pic")[9];
+    dragDom(oPic1, 200, 50, function (x, y) {
+        console.log(x, y);
+        return {x: x, y: y}
+    });
+    dragDom(oPic2, 310, 60);
+    dragDom(oPic3, 690, 60);
+    dragDom(oPic4, 1000, 60);
+    dragDom(oPic5, 100, 390);
+    dragDom(oPic6, 1000, 390);
+    dragDom(oPic7, 110, 740);
+    dragDom(oPic8, 410, 740);
+    dragDom(oPic9, 920, 780);
+    dragDom(oPic10, 420, 350);
+</script>
+</body>
+</html>

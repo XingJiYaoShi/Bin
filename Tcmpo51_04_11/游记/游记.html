@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>游记</title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-resource.js"></script>
+    <script src="js/vue-router.min.js"></script>
+    <link rel="stylesheet" href="font/iconfont.css">
+    <style>
+#title{
+    background-color: #009BE1;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+        span{
+        color: #CCCCCC;
+            line-height: 50px;
+            font-size: 32px;
+            flex: 3;
+
+
+        }
+        .icon-sousuo{
+            font-size: 32px;
+            line-height: 50px;
+            flex: 1;
+            color: white;
+        }
+        .icon-yonghu{
+            font-size: 32px;
+            line-height: 50px;
+            flex: 1;
+            color: white;
+        }
+        .icon-youcecaidan{
+            font-size: 32px;
+            line-height: 50px;
+            flex: 1;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+<div id="title">
+    <span>蟬游記</span>
+    <i class="icon iconfont icon-sousuo"></i>
+    <i class="icon iconfont icon-yonghu"></i>
+    <i class="icon iconfont icon-youcecaidan"></i>
+</div>
+    <router-link to="/aaa">游记</router-link>
+    <router-link to="/bbb">攻略</router-link>
+    <router-link to="/ccc">工具箱</router-link>
+
+    <router-view></router-view>
+</div>
+<script>
+    var AAA = {
+        template: "#aaa",
+
+        data: function () {
+            return {
+                result: "hello"
+            }
+        },
+        methods: {
+            getClick: function () {
+                alert("弹框");
+            }
+        }
+
+    };
+    var BBB = {
+        template: "#aaa",
+
+        data: function () {
+            return {
+                result: "hello"
+            }
+        },
+        methods: {
+            getClick: function () {
+                alert("弹框");
+            }
+        }
+
+    };
+    var CCC = {
+        template: "#aaa",
+        //组件 写数据绑定  data:function(){
+        //      return{
+        //
+        //      }
+        // }
+        data: function () {
+            return {
+                result: "hello"
+            }
+        },
+        methods: {
+            getClick: function () {
+                alert("弹框");
+            }
+        }
+
+    };
+
+
+    var router = new VueRouter({
+        routes: [
+            {path: "/bbb", component: BBB},
+            {path: "/aaa", component: AAA},
+            {path: "/ccc", component: CCC},
+        ]
+
+    });
+    new Vue({
+        el: "#app",
+        data: {
+            result: "hello"
+
+        },
+        router: router,
+        methods: {},
+    });
+</script>
+</body>
+</html>

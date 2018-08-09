@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="name">
+<br>
+<input type="text" id="pwd">
+<br>
+<button onclick="save1()">存储</button>
+<button onclick="read1()">读取</button>
+<script>
+    //{name:name,pwd:pwd}
+    //1:类
+    function Person() {
+        //变量
+        this.name = document.getElementById("name").value;
+        this.pwd = document.getElementById("pwd").value;
+    }
+    function save1() {
+        var person = new Person();//this person
+        var json = JSON.stringify(person);//stringify把任意对象变成string
+        console.log(typeof json);//object-->string : JSON类型
+        localStorage.setItem("person", json);
+//        localStorage.setItem("pwd", pwd);
+    }
+    function read1() {
+        var person = localStorage.getItem("person");
+        var obj = JSON.parse(person);
+        alert(obj.name);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+回顾:
+  vue:
+    1:指令
+      v-html:超文本
+      v-model:双向绑定
+      v-if:是否显示
+       v-else
+      v-for:循环
+      v-show:显示隐藏
+      v-on:事件
+      v-bind:属性 // name  value  title  src  style  class
+      v-text:普通  {{}}
+
+
+    2:数据绑定 new Vue({
+      el:"id/class/div":
+      data:{数据源}
+      methods:{
+        方法:
+      },
+      生命周期:
+      created:function(){
+
+      }
+    })
+
+    图书管理:
+  这节课:
+    vue:
+    vue-resource ajax
+
+    vue-router:路由
+    组件+模版传值
+    vue-x : 传值
+    ElementUI / Bootstrap
+
+    android:  res:资源
+    vue:vue-cli
+    vue-cli:
+      node+express+mysql+打包工具 .vue  .js(es6:)
+
+  先导vue
+  vue-resource:网络请求  必须要引入vue
+     vue
+     this.$http.get("",{请求体}).then(function(data){},function(err){})
+
+  ajax:　　jsp / html/
+
+  作业:
+    1:课堂代码 5遍
+    2:实现百度搜索 输入文字 搜
+      二级难度: 上下  选中当前的item 变色
+      三级难度: 点击回车  真正的搜索
+      四级难度: 上下 输入框 变成选中的文字
+    3:SSM 今天 链接数据库 mysql
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-resource.js"></script>
+</head>
+<body>
+
+<div id="login">
+    <input type="text" placeholder="name:" v-model="name">
+    <input type="text" placeholder="name:" v-model="age">
+    <br>
+    <button @click="login()">登录</button>
+
+</div>
+
+<script>
+    new Vue({
+        el: "#login",
+        data: {
+            name: "",
+            age: ""
+        },
+        methods: {
+            login: function () {
+
+                this.$http.get("http://localhost:3801", {name: this.name, age: this.age}).then(function (data) {
+                    console.log(data.data);
+                },function (err) {
+
+                })
+
+            }
+        }
+
+    });
+</script>
+
+
+</body>
+</html>

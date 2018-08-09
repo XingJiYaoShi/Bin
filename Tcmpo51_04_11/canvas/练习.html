@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1200" height="300px" style="border: 1px solid #691100;display: block;margin: 0 auto"></canvas>
+<script>
+    var  canvas=document.getElementById("canvas");
+    var context=canvas.getContext("2d");
+
+    context.beginPath();
+
+    context.strokeStyle="red";
+    context.lineWidth=2;
+    context.fillStyle="red"
+    context.arc(500,150,20,50,300,true);
+context.fill();
+    context.stroke();
+
+    context.closePath();
+
+
+
+</script>
+
+</body>
+</html>

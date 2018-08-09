@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <canvas id="canvas" width=1300 height=600 style="display: block;margin: 0 auto;border: 1px solid #000000"></canvas>
+</body>
+<script>
+    //中心开始
+    var canvas=document.getElementById("canvas");
+    var context=canvas.getContext("2d");
+    var x=[540,440,240,360,760,900,800];
+    var y=[250,450,280,100,40,200,400];
+    var s=[0.01,0.5,0.2,1.4,1.7,0.6,1.7,1,0.3,1.1,2,0.3,1.1,1.7,1.75,0.9,0.4,0.3,1.1,1.7,1.75,0.9,1.5,0.5,0.3,1.1,1.7,1.75,0.9,1.5,0.5,0.01,0.5,0.2,1.4,1.7,0.6,0.3,1.1,1.7,1.75,0.9,0.4];
+    var e=[1.4,0.9,1.6,0.6,0.9,1.9,1.5,0.5,1.9,0.4,1.4,1.8,0.6,1.4,1.2,0.2,0.6,1.8,0.6,1.4,1.2,0.2,0.8,1.8,1.8,0.6,1.4,1.2,0.2,0.8,1.8,1.4,0.9,1.6,0.6,0.9,1.9,1.8,0.6,1.4,1.2,0.2,0.6];
+
+    context.fillStyle="red";
+    context.strokeStyle="red"
+    function ss(){
+        context.clearRect(0,0,1300,600);
+    context.beginPath();
+    context.lineWidth="7";
+    context.arc(x[0],y[0],50,Math.PI*s[0],e[0]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="7";
+    context.arc(x[0],y[0],50,Math.PI*s[1],e[1]*Math.PI,false);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(x[0],y[0],43,Math.PI*s[2],e[2]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(x[0],y[0],43,Math.PI*s[3],e[3]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(x[0],y[0],35,Math.PI*s[4],e[4]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(x[0],y[0],35,Math.PI*s[5],e[5]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+    //中心结束
+
+    //左下小开始
+    context.beginPath();
+    context.lineWidth="3";
+    context.arc(440,450,35,Math.PI*s[6],e[6]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="3";
+    context.arc(440,450,35,Math.PI*s[7],e[7]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="3";
+    context.arc(440,450,35,Math.PI*s[8],e[8]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(440,450,30,Math.PI*s[9],e[9]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(440,450,30,Math.PI*s[10],e[10]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+    //左下小结束
+
+
+    //左开始
+    context.beginPath();
+    context.lineWidth="5";
+    context.arc(240,280,38,Math.PI*s[11],e[11]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="5";
+    context.arc(240,280,38,Math.PI*s[12],e[12]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="5";
+    context.arc(240,280,38,Math.PI*s[13],e[13]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(240,280,33,Math.PI*s[14],e[14]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(240,280,33,Math.PI*s[15],e[15]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(240,280,28,Math.PI*s[16],e[16]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+    //左结束
+
+    //左上开始
+    context.beginPath();
+    context.lineWidth="3.5";
+    context.arc(360,100,35,Math.PI*s[17],e[17]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="3.5";
+    context.arc(360,100,35,Math.PI*s[18],e[18]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="3.5";
+    context.arc(360,100,35,Math.PI*s[19],e[19]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(360,100,30,Math.PI*s[20],e[20]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(360,100,30,Math.PI*s[21],e[21]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(360,100,25,Math .PI*s[22],e[22]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(360,100,25,Math.PI*s[23],e[23]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+    //左上结束
+
+    //右上开始
+    context.beginPath();
+    context.lineWidth="3.5";
+    context.arc(760,40,35,Math.PI*s[24],e[24]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="3.5";
+    context.arc(760,40,35,Math.PI*s[25],e[25]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="3.5";
+    context.arc(760,40,35,Math.PI*s[26],e[26]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(760,40,30,Math.PI*s[27],e[27]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(760,40,30,Math.PI*s[28],e[28]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(760,40,25,Math .PI*s[29],e[29]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(760,40,25,Math.PI*s[30],e[30]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+    //右上结束
+
+    //右开始
+    context.beginPath();
+    context.lineWidth="6";
+    context.arc(900,200,45,Math.PI*s[31],e[31]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="6";
+    context.arc(900,200,45,Math.PI*s[32],e[32]*Math.PI,false);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(900,200,38,Math.PI*s[33],e[33]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(900,200,38,Math.PI*s[34],e[34]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(900,200,32,Math.PI*s[35],e[35]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(900,200,32,Math.PI*s[36],e[36]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+    //右结束
+
+    //右下开始
+    context.beginPath();
+    context.lineWidth="6";
+    context.arc(800,400,40,Math.PI*s[37],e[37]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="6";
+    context.arc(800,400,40,Math.PI*s[38],e[38]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="6";
+    context.arc(800,400,40,Math.PI*s[39],e[39]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(800,400,35,Math.PI*s[40],e[40]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(800,400,35,Math.PI*s[41],e[41]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.lineWidth="2";
+    context.arc(800,400,30,Math.PI*s[42],e[42]*Math.PI,true);
+    context.stroke();
+    context.closePath();
+
+
+        context.beginPath();
+        context.lineWidth="2";
+        context.arc(666,300,30,1.5*Math.PI,1*Math.PI,true);
+        context.stroke();
+        context.closePath();
+    //右下结束
+
+        //连接线
+        context.beginPath();
+        context.strokeStyle="red";
+        context.lineWidth=2;
+        for (var i=0;i<x.length;i++) {
+            context.moveTo(x[0],y[0]);
+            context.lineTo(x[i],y[i]);
+
+        }
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.strokeStyle="red";
+        context.lineWidth=2;
+        context.moveTo(x[0],y[0]);
+        for (var i=0;i<x.length;i++) {
+            context.lineTo(x[i],y[i]);
+            if(i==6){
+                context.moveTo(x[i],y[i]);
+                context.lineTo(x[i-5],y[i-5]);
+            }
+        }
+        context.stroke();
+        context.closePath();
+        //划线结束
+    }
+
+
+    function update() {
+        for (var i=0;i<s.length;i++){
+                s[i]+=0.1;
+                e[i]+=0.1;
+        }
+    }
+
+
+
+setInterval(function () {
+    ss();
+   /* update();*/
+},370)
+
+
+</script>
+</html>

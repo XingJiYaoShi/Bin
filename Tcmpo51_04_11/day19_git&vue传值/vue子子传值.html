@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <!--<script src="js/vue-router.min.js"></script>-->
+</head>
+<body>
+<div id="app">
+    <!--绑定属性 -->
+    <my-aaa @zzc="add($event)"></my-aaa>
+    <my-bbb :mydata="msg"></my-bbb>
+</div>
+
+<template id="aaa">
+    <div>
+        <button @click="sds()">点击</button>
+    </div>
+</template>
+
+<template id="bbb">
+    <div>{{mydata}}</div>
+</template>
+
+
+<script>
+
+    var A = {
+        template: "#aaa",
+        data: function () {
+            return {
+                child: "我是来自aaa"
+            }
+        },
+        methods: {
+            sds: function () {
+                this.$emit("zzc", this.child);
+            }
+        }
+    };
+    var B = {
+        template: "#bbb",
+        props: ["mydata"]
+    };
+
+
+    new Vue({
+        el: "#app",
+        data: {
+            msg: ""
+        },
+        methods: {
+            add: function (data) {
+                this.msg = data;
+                alert("");
+
+            }
+        },
+        components: {
+            "my-aaa": A,
+            "my-bbb": B
+        }
+    });
+</script>
+</body>
+</html>

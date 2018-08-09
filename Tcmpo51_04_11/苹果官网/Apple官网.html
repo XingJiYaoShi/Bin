@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apple(中国)-官方网站</title>
+    <link rel="short icon"  href="image/apple.png">
+    <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+    <style>
+        html{
+            font-size: 62.5%;
+        }
+*{
+    margin: 0;
+    padding:0;
+    user-select: none;
+}
+#header{
+    background-color: #333333;
+    height: 50px;
+}
+#advertising{
+    height: 40px;
+    background-color: #444444;
+    color: #A8A8AA;
+    font-size: 12px;
+    text-align: right;
+    line-height: 40px;
+    padding-right: 80px;
+
+}
+.icon-daohang{
+    display: none;
+    font-size: 25px;
+    color: #ffffff;
+    opacity: 0;
+
+    flex: 1;
+}
+.icon-daohang:hover{
+    color: #cccccc;
+    cursor: pointer;
+}
+.icon-iconfontapple{
+
+    font-size: 25px;
+    color: #ffffff;
+    flex: 1;
+}
+.icon-iconfontapple:hover{
+    color: #cccccc;
+    cursor: pointer;
+}
+.icon-gouwudai{
+
+    font-size: 25px;
+    color: #ffffff;
+
+    flex: 1;
+}
+.icon-gouwudai:hover{
+    color: #cccccc;
+    cursor: pointer;
+}
+.icon-sousuo{
+    float: right;
+    font-size: 30px;
+    color: #ffffff;
+    margin-right: 16px;
+    flex: 1;
+}
+.icon-sousuo:hover{
+    color: #cccccc;
+    cursor: pointer;
+}
+.top{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: #333333;
+    opacity: 0.8;
+
+}
+#nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+#Top_nav li{
+    font-family: "Hiragino Sans GB", arial, Verdana, tahoma, "\5b8b\4f53", sans-serif;
+    list-style: none;
+    font-size: 15px;
+    color:#E6E6E6;
+    line-height: 50px;
+    user-select: none;
+    cursor: pointer;
+
+}
+#Top_nav li:hover{
+    color: #cccccc;
+
+}
+#Top_nav{
+        display: flex;
+        justify-content: space-around;
+        flex: 50%;
+    }
+.titlt_large{
+
+    margin-top: 20px;
+  font-size: 5rem;
+    font-family: "Hiragino Sans GB", arial, Verdana, tahoma, "\5b8b\4f53", sans-serif;
+    font-weight: bold;
+}
+ .title_small {
+     font-weight: bold;
+     font-size: 2.5rem;
+     font-family: "Hiragino Sans GB", arial, Verdana, tahoma, "\5b8b\4f53", sans-serif;
+ }
+#one_tu{
+    background-color: #FAFAFA;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+    height: 400px;
+
+}
+#x_y_tu{
+
+    width: 909px;
+    height: 194px;
+    background-image: url("image/iphone_x_large.jpg");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    margin: 0 auto;
+
+
+}
+#two_tu{
+    background-color: #B00E23;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    text-align: center;
+}
+.tebieban{
+    border-radius: 5px;
+    width: 80px;
+    height: 40px;
+    border:  1px solid #ffffff;
+    font-size: 2rem;
+    color: white;
+    line-height: 40px;
+    margin: 0 auto;
+}
+.xiahuaxian:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+#two_img{
+    width: 334px;
+    height: 335px;
+    background-image: url("image/hero_large.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+
+}
+#three_tu{
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+
+
+}
+        #three_img{
+            width: 1068px;
+            height: 396px;
+            background-image: url("image/ipad_large.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+        }
+        #item{
+            padding-left: 1%;
+            padding-right: 1%;
+            margin-top: 10px;
+        }
+#tu_item{
+    display: flex;
+    justify-content:space-between;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+
+}
+ #tu_item li{
+     /*background-color: #cceeff;*/
+     /*border: 2px solid #000000;*/
+     list-style: none;
+     width: 49%;
+     height:600px;
+     margin-bottom: 10px;
+
+
+ }
+        #tu_item1{
+            width: 516px;
+            height: 430px;
+            background-image: url("image/macbook_pro_large.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+        }
+        #tu_item2{
+            width: 516px;
+            height: 430px;
+            background-image: url("image/watch_series_3_large.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+            margin: 0 auto;
+        }
+        #tu_item3{
+            width: 516px;
+            height: 430px;
+            background-image: url("image/trade_up_large.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+        }
+        #tu_item4{
+            width: 516px;
+            height: 430px;
+
+            margin: 0 auto;
+        }
+        #tu_item5{
+            width: 100%;
+            height: 430px;
+            background-image: url("image/apple_pay_new_life_large.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+        }
+        #tu_item6{
+            width: 100%;
+            height: 430px;
+            background-image: url("image/giveback_large.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+        }
+
+.item_li{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen  and (max-width: 1100px){
+
+    #x_y_tu{
+        width: 649px;
+        height: 136px;
+        background-image: url("image/iphone_x_large.jpg");
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+        margin: 0 auto;
+
+
+    }
+    .titlt_large{
+        font-size: 3rem;
+    }
+    .title_small {
+        font-size: 1.5rem;
+    }
+    #three_img{
+        width: 736px;
+        height: 396px;
+        background-image: url("image/ipad_medium.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin: 0 auto;
+
+    }
+}
+@media screen and (max-width: 900px){
+    #x_y_tu {
+        width: 167px;
+        height: 333px;
+        background-image: url("image/iphone_x_small.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+    #Top_nav{
+        display:none;
+        opacity: 0;
+    }
+   .icon-sousuo{
+        display:none;
+        opacity: 0;
+    }
+    .icon-daohang{
+        display:inline;
+        opacity: 1;
+    }
+    #three_img{
+        width: 320px;
+        height: 367px;
+        background-image: url("image/ipad_small.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin: 0 auto;
+
+    }
+
+}
+@media screen and(min-width: 600px) and (max-width: 800px){
+
+
+}
+@media screen and (max-width: 600px){
+    #tu_item{
+        display: flex;
+        justify-content:space-between;
+        flex-direction: column;
+        /*flex-wrap: wrap;*/
+
+    }
+    #tu_item li{
+        background-color: #cceeff;
+        border: 2px solid #000000;
+        list-style: none;
+        width: 100%;
+        height: 400px;
+        margin-bottom: 10px;
+
+
+    }
+
+}
+
+    </style>
+</head>
+<body>
+<div>
+   <header id="header">
+       <div class="top">
+       <!--<div id="advertising">&lt;广告&gt;</div>-->
+       <div id="nav">
+           <i class="iconfont icon-daohang"></i>
+           <i class="iconfont icon-iconfontapple"></i>
+           <ul id="Top_nav">
+                   <li>Mac</li>
+                   <li>iPad</li>
+                   <li>iPhone</li>
+                   <li>Watch</li>
+                   <li>Music</li>
+                   <li>技术支持</li>
+               </ul>
+           <i class="iconfont icon-sousuo"></i>
+           <i class="iconfont icon-gouwudai"></i>
+       </div>
+       </div>
+   </header>
+<div class="content">
+    <div id="one_tu">
+        <span class="titlt_large">iPhone X</span>
+        <span class="title_small" style="margin-bottom: 20px"> hello，未来</span>
+        <div id="x_y_tu">
+        </div>
+
+    </div>
+    <div id="two_tu">
+        <span class="tebieban">特别版</span>
+        <span class="titlt_large" style="color: white"> iPhone 8，现更以红色呈现。</span>
+        <span class="title_small" style="margin-bottom: 20px;color: white"><span class="xiahuaxian">进一步了解</span> &gt;&nbsp;&nbsp; <span class="xiahuaxian">购买</span>&gt;</span>
+        <div id="two_img">
+        </div>
+    </div>
+    <div id="three_tu">
+
+        <span class="titlt_large" >iPad</span>
+        <span class="title_small" style="margin-bottom: 20px">这个电脑，拿掉了电脑的条条框框。</span>
+        <div id="three_img">
+        </div>
+    </div>
+<div id="item">
+    <ul id="tu_item">
+        <li style="background-color: #FAFAFA">
+            <div class="item_li">
+
+                <span class="titlt_large" >MacBook Pro</span>
+                <span class="title_small" style="margin-bottom: 20px">一身才华，一触，即发。</span>
+                <div id="tu_item1">
+                </div>
+            </div>
+
+        </li>
+        <li style="background-color: #EEEEEE">
+            <div class="item_li">
+
+                <span class="titlt_large" ><img src="image/watch_series_3_logo_medium.png"></span>
+                <span class="title_small" style="margin-bottom: 20px">带上自由，戴上蜂窝网络。</span>
+                <div id="tu_item2">
+                </div>
+            </div>
+        </li>
+        <li style="background-color: #FAFAFA">
+            <div class="item_li">
+
+                <span class="titlt_large" >iPhone 年年焕新计划</span>
+                <span class="title_small" style="margin-bottom: 20px">享受 AppleCare+ 全方位服务计划。</span>
+                <div id="tu_item3">
+                </div>
+            </div>
+        </li>
+        <li style=" background-image: url('image/music_three_months_large.jpg');background-repeat: no-repeat;background-position: -300px 0px">
+            <div class="item_li">
+
+                <span class="titlt_large" ><img src="image/music_white_large.png"></span>
+                <span class="title_small" style="color: white">数百万首歌曲，三个月尽情试听。</span>
+                <div id="tu_item4">
+                </div>
+            </div>
+        </li>
+        <li style="background-color: #FAFAFA">
+            <div class="item_li">
+                <span><img src="image/hero_logo_large.jpg"></span>
+                <span class="titlt_large" >现支持北京、上海交通卡。</span>
+                <span class="title_small" style="margin-bottom: 20px;">升级至最新版 iOS 及 watchOS 即可体验。</span>
+                <div id="tu_item5">
+                </div>
+            </div>
+        </li>
+        <li style="background-color: #E4E4E4">
+            <div class="item_li">
+
+                <span class="titlt_large" > Apple GiveBack 回馈计划</span>
+                <span class="title_small" style="margin-bottom: 20px"> 以旧换新，更有新方法。</span>
+                <div id="tu_item6">
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+    <footer>
+
+
+    </footer>
+
+</div>
+</body>
+</html>

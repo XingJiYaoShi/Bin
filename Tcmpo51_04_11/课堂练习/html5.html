@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,div,ul,li,p{
+            margin: 0;
+            padding: 0;
+
+        }
+        #con{
+            width:100%;
+            min-width: 1000px;
+
+        }
+        #header{
+            color:#ffffff;
+            line-height: 30px;
+            font-size: 14px;
+            padding-top: 5px;
+            height: 30px;
+            width: 100%;
+            background-color: #222222;
+
+        }
+        #main{
+            width:100%;
+            margin:0 auto;
+        }
+        .left{
+            width: 15%;
+            height: 600px;
+            display: inline-block;
+            background-color: #ffffff;
+            vertical-align: top;
+        }
+        .center{
+            width: 55%;
+            height: 600px;
+            display: inline-block;
+            background-color: #ffffff;
+            vertical-align: top;
+
+        }
+        .right{
+
+            width: 30%;
+            height: 600px;
+            display: inline-block;
+            background-color:white;
+            vertical-align: top;
+        }
+        .list>li{
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            list-style:none;
+            text-align: center;
+            user-select: none;
+            margin-bottom: 1px;
+            }
+        .list li:hover{
+            background-color: #ED4040;
+            color: #fff;
+            border-radius:5px;
+
+        }
+        .download{
+            text-decoration: none;
+            color:#ffffff;
+            line-height: 30px;
+            font-size: 14px;
+            padding-top: 8px;
+            padding-bottom: 5px;
+            padding-right: 10px;
+            margin-left: 5px;
+            border-right: 1px solid #cccccc;
+
+        }
+
+        #tu_img_list>li{
+            list-style:none;
+            padding: 0px;
+            margin: 0px;
+            width: 60px;
+            height: 50px;
+        }
+        #tu_img_list{
+        float: right;
+        }
+        #tu_img_list>li>a{
+
+            height: 40px;
+            color:#ffffff;
+            text-align: center;
+            user-select: none;
+            width: 60px;
+            line-height: 40px;
+            text-decoration: none;
+            padding-right: 13px;
+            padding-bottom: 8px;
+            padding-top: 5px;
+            padding-left: 15px;
+
+        }
+        #tu_img_list>li>a:hover{
+        background-color: #C43A3A;
+
+        }
+        .ss{
+            height: 50px;
+            width: 219px;
+            line-height: 50px;
+            border-radius:5px 0px 0px 5px;
+            border: 0;
+            background: #F5F6F7;
+            border: 1px solid #cccccc;
+            border-right: 0px;
+        }
+        .btn{
+            width: 80px;
+            height: 52px;
+            background-color:#208EDA;
+            border-radius:0px 5px 5px 0px;
+            border: 1px solid #208EDA;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+<!--html5独有的-->
+<!--顶部-->
+<div id="con">
+<header id="header">
+    <a href="#" class="download">下载APP</a>&nbsp;&nbsp;
+    <span>北京</span>&nbsp;&nbsp;<span>晴</span>&nbsp;&nbsp;
+    <span>7°</span>&nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;<span>25°</span>
+    <span >∨</span>
+<p style="display: inline-block;float: right"> <a class="download"  href="#">侵权投诉</a>
+    <a class="download2" href="#" style="text-decoration: none;color: white;font-size: 14px">头条产品</a></p>
+</header>
+    <!--主体-->
+<div id="main">
+    <!--14% 55% 30%-->
+    <!--左-->
+   <div class="left">
+<div style="width: 150px;margin: 40px auto">
+       <img class="img" src="../今日头条/img/logo.201f80d.png" width="150" height="40" >
+       <ul class="list" >
+           <li>推荐</li>
+           <li>热点</li>
+           <li>图片</li>
+           <li>科技</li>
+           <li>娱乐</li>
+           <li>游戏</li>
+           <li>体育</li>
+           <li>汽车</li>
+           <li>财经</li>
+           <li>搞笑</li>
+           <li>更多</li>
+       </ul>
+</div>
+   </div><!--中
+   --><div class="center">
+    <div style="width: 720px;height: 300px;background-color: #cccccc;margin-top: 40px">
+        <img src="../今日头条/img/78be0018063584fa2e04.jpg" width="660px" height="300px"><!--
+        --><ul id="tu_img_list" style="background-color: #000000;width: 60px;">
+            <li><a href="#">要闻</a></li>
+            <li><a href="#">社会</a></li>
+            <li><a href="#">娱乐</a></li>
+            <li><a href="#">体育</a></li>
+            <li><a href="#">军事</a></li>
+            <li><a href="#">明星</a></li>
+        </ul>
+
+    </div>
+    </div><!--右
+    --><div class="right">
+    <div style="width: 300px;margin-top: 40px;margin-left: 30px">
+        <input type="text" class="ss"><input type="button" class="btn" value="搜索">
+<div style="width: 300px;height: 226px; background-color: #cccccc;margin-top: 20px">
+
+
+
+</div>
+
+    </div>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 底部-->
+<footer id="footer"></footer>
+</body>
+</html>

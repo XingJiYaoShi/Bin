@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机圆球</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="500" style="border: 1px solid #cccccc;display: block;margin: 0 auto;"></canvas>
+<script>
+    var xs = parseInt(Math.random()*200);
+   var ys = parseInt(Math.random()*200);
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+var x=0;
+
+    // while()
+    //
+    for (var i=0; i<=10;i++){
+
+
+            context.beginPath();
+            context.lineWidth = 2;
+            context.strokeStyle = "#cccccc";
+            context.moveTo(x, x);
+            context.lineTo(xs, xs);
+            context.stroke();
+            context.closePath();
+
+            context.beginPath();
+            context.strokeStyle = "black";
+            context.lineWidth = 2;
+            context.fillStyle = "red";
+            context.arc(
+                xs, xs, 10,
+                0, 2 * Math.PI, false
+            );
+            context.stroke();
+            context.fill();
+            context.closePath();
+
+
+
+
+         }
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

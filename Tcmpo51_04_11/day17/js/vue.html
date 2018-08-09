@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+
+<div id="app">
+    <h1>{{msg}}</h1>
+    <p v-html="world"></p>
+    <input type="text" v-model="msg">
+    <p style="width: 100px;height: 100px;background-color: #208EDA"></p>
+    <button v-on:click="myClick()">111</button>
+    <p v-html="result"></p>
+    <ul>
+        <li v-for="(item,index) in result" v-on:click="food(index)">{{item}},{{index}}</li>
+    </ul>
+    <input type="text" v-model="food1">
+    <button v-on:click="addfood(）">tianjia</button>
+</div>
+
+
+<script>
+new Vue({
+    el:"#app",
+    data:{
+      msg:"6666666666",
+        //
+        // world:"<h1 style='color: yellow'>hello world</h1>",
+        // result:["123","456","789"],
+        // food1:"",
+    },
+    // methods:{
+    //     myClick:function () {
+    //         this.isShow=!this.isShow;
+    //     },
+    //     food:function (index) {
+    //       alert(this.result[index]);
+    //     },
+    //     addfood:function () {
+    //         this.result.push(this.food1)
+    //     }
+    // }
+
+
+});
+
+
+
+
+</script>
+
+
+</body>
+</html>

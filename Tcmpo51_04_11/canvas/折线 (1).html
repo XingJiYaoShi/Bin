@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+<canvas id="canvas1" width=1500 height=200 style="display: block;margin: 0 auto;"></canvas>
+<canvas id="canvas2" width=1500 height=200 style="display: block;margin: 0 auto;"></canvas>
+<canvas id="canvas3" width=1500 height=200 style="display: block;margin: 0 auto;"></canvas>
+<canvas id="canvas4" width=1500 height=200 style="display: block;margin: 0 auto;"></canvas>
+<script>
+var cans=["canvas2","canvas3","canvas4"];
+for(var i=0;cans.length;i++){
+    test(cans[i]);
+}
+    function test(cs) {
+        var canvas = document.getElementById(cs);
+        var context = canvas.getContext("2d");
+
+        //每个点 都要有距离
+        var lefts = [];
+        var tops = [];
+        var vyArr = [];
+        var vxArr=[];
+        var ydian=Math.random()*100+50;
+
+        for (var i = 0; i < 15; i++) {
+            //每个点的横纵坐标
+            if (i == 0) {
+                lefts[i] = Math.random() * 100 + 50
+            } else {
+                lefts[i] = Math.random() * 100 + 50 + lefts[i - 1];//0-1 0-100 100-200
+            }
+            vyArr[i] = Math.random() + 0.5;
+            vxArr[i] = Math.random()+10;
+
+            //纵坐标 10--190
+
+            tops[i] = Math.random() * 180 + 10;
+            lefts[i] = Math.random() * 15;
+
+        }
+        var obj = {vy: vyArr, vx: vxArr, g: 0.02,y:1};
+
+
+        function init() {
+            context.clearRect(0, 0, 1500, 200);
+            var cas = document.getElementById("canvas1");
+            var con = cas.getContext("2d");
+            con.beginPath();
+            var canvasGradient = con.createRadialGradient(0, 0, 0, 400, 0, 1500);
+            canvasGradient.addColorStop(0.1, "#69ffcc");
+            canvasGradient.addColorStop(0.3, "yellow");
+            canvasGradient.addColorStop(0.5, "pink");
+            canvasGradient.addColorStop(1, "red");
+            con.fillStyle = canvasGradient;
+            con.fillRect(0, 0, 1500, 200);
+            con.closePath();
+
+            for (var j = 0; j < lefts.length; j++) {
+                context.beginPath();
+                context.strokeStyle = "#b30003";
+                context.lineWidth = 1;
+
+                context.moveTo(lefts[j], tops[j]);
+                if (j == 0) {
+                    context.lineTo(0,100);
+
+                } else {
+                    context.lineTo(lefts[j - 1], tops[j - 1]);
+
+                }
+                context.stroke();
+
+                context.closePath();
+
+            }
+            for (var i = 0; i < lefts.length; i++) {
+                context.beginPath();
+                context.strokeStyle = "#b97dff";
+                context.lineWidth = 1;
+
+                context.fillStyle = "#b97dff";
+                context.arc(lefts[i], tops[i], 5, 0, 2 * Math.PI, false);
+                context.fill();
+                context.stroke();
+                context.closePath();
+
+            }
+
+
+        }
+
+        function update() {
+            for (var i = 0; i < tops.length; i++) {
+                tops[i] += obj.vy[i];
+                obj.vy[i] += obj.g;
+                if (tops[i] > 190 || tops[i] < 10) {
+                    obj.vy[i] = -obj.vy[i];
+                    obj.g = -obj.g;
+                }
+
+            }
+            for (var i = 0; i < lefts.length; i++) {
+                lefts[i] += obj.vx[i];
+                obj.vx[i] -= obj.y;
+                if (lefts[i] >30 || lefts[i] <5) {
+                    obj.vx[i] = -obj.vx[i];
+                    obj.y = -obj.y;
+                }
+
+            }
+
+        }
+
+        setInterval(function () {
+            init();
+            update();
+        }, 20);
+
+    }
+
+</script>
+<script>
+
+
+
+</script>
+</body>
+</html>

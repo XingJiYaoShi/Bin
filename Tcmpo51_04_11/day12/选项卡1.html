@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box div {
+            display: none;
+            width: 200px;
+            height: 150px;
+            color: #ffffff;
+            background-color: #222222;
+            font-size: 30px;
+            text-align: center;
+            line-height: 150px;
+        }
+
+        .active {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <button class="active">新闻</button>
+    <button>娱乐</button>
+    <button>八卦</button>
+
+    <div style="display: block;">新闻</div>
+    <div>娱乐</div>
+    <div>八卦</div>
+    <!--
+        点击按钮
+         1:按钮的颜色发生变化
+         2:下面的div发生变化
+    -->
+</div>
+
+
+<script>
+
+    (function () {//
+        var oBox = document.getElementById("box");
+        var oBtn = oBox.getElementsByTagName("button");
+        var oDiv = oBox.getElementsByTagName("div");
+
+
+        for (var i = 0; i < oBtn.length; i++) {
+            oBtn[i].index = i;
+            oBtn[i].onclick = function () {
+                for (var j = 0; j < oBtn.length; j++) {
+                    oBtn[j].className = "";
+                    oDiv[j].style.display = "none";
+
+                }
+
+                oBtn[this.index].className = "active";//
+
+
+                oDiv[this.index].style.display = "block";
+
+            };
+
+        }
+
+    })();
+
+
+</script>
+</body>
+</html>

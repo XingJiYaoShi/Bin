@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-router.min.js"></script>
+    <style>
+
+        a {
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        .router-link-active {
+            background-color: chartreuse;
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+    <router-link to="/aaa">我是AAA</router-link>
+    <router-link to="/bbb">我是BBB</router-link>
+    <router-view></router-view>
+</div>
+
+<!--默认不可见-->
+<template id="aaa">
+    <div>
+        <h1>我是模块1</h1>
+    </div>
+</template>
+
+<template id="bbb">
+    <div>
+        <h2>{{result}}</h2>
+        <h1 style="background-color: chartreuse">我是模块2</h1>
+        <button @click="getClick()">按钮</button>
+    </div>
+</template>
+
+<script>
+    var AAA = {
+        template: "#aaa",
+        //组件 写数据绑定  data:function(){
+        //      return{
+        //
+        //      }
+        // }
+        data: function () {
+            return {
+                result: "hello"
+            }
+        },
+        methods: {
+            getClick: function () {
+                alert("弹框");
+            }
+        }
+
+    };
+
+
+    var BBB = {
+        template: "#bbb",
+        //组件 写数据绑定  data:function(){
+        //      return{
+        //
+        //      }
+        // }
+        data: function () {
+            return {
+                result: "hello"
+            }
+        },
+        methods: {
+            getClick: function () {
+                alert("弹框");
+            }
+        }
+
+    };
+
+    var router = new VueRouter({
+        routes: [
+            {path: "/bbb", component: BBB},
+            {path: "/aaa", component: AAA}
+        ]
+
+    });
+
+    new Vue({
+        el: "#app",
+        data: {
+            result: "hello"
+
+        },
+        router: router,
+        methods: {},
+    });
+</script>
+</body>
+</html>

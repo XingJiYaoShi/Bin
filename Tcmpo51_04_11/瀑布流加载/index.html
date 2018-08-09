@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#container{
+				position: relative;
+			}
+			.box{
+				float: left;
+				padding: 5px;
+			}
+			.box-img{
+				padding: 5px;
+				border: 1px solid #ccc;
+				box-shadow: 0 0 5px #ccc;
+				border-radius: 5px;
+			}
+			.box-img img{
+				width: 230px;
+				height: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div class="box">
+				<div class="box-img">
+					<img src="images/0.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/1.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/2.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/3.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/4.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/5.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/6.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/7.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/8.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/9.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/10.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/11.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/17.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/13.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/14.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/15.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/16.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/17.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/18.jpg">
+				</div>
+			</div>
+			<div class="box">
+			<div class="box-img">
+				<img src="images/19.jpg">
+			</div>
+		</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/20.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/21.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/22.jpg">
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-img">
+					<img src="images/23.jpg">
+				</div>
+			</div>
+		</div>
+	<script>
+		/*瀑布流加载的思路img
+			1.完善布局
+			2实现瀑布流加载的原理
+				2.1把你要加载的数据放在当前列数的最小高度的下面
+
+
+			js:是基于原型的动态解释性语言 弱语言
+			ES 语法
+			DOM,BOM
+		*/
+		var oPorent=document.getElementById("container");
+		/*//var aBox=oPorent.getElementsByClassName("box-img");
+		//获取子集空间ES5 上下文 作用域 变量提升
+		//const a=1;
+        // function getChilds() {
+			//
+        // }*/
+		window.addEventListener("load", ()=>{
+            imgLocation("box");
+		}, false);
+        /*  // window.onload=function () {
+        //     imgLocation("box");
+        // };*/
+		const  imgLocation = (child) =>{
+		const aContent= getChilds(child);
+		    //console.log(aContent);
+			const imgWidth= aContent[0].offsetWidth;
+			const num=~~(document.documentElement.clientWidth/imgWidth);
+			//console.log(num);
+			oPorent.style.cssText="width:"+imgWidth*num+"px;margin:0 auto";
+			//计算图片高度
+			const heightArr=[];
+			[...aContent].forEach( (curent,index) =>{
+                if(index<num){
+				heightArr.push(curent.offsetHeight);
+                }else {
+                 const minHeight=Math.min(...heightArr);
+                //获取最小高度的序列号
+                 /* //const minHeight=Math.min.apply(null,[0,1,2,3]);
+                   // console.log(minHeight);*/
+					var minIndex=minImgIndex(heightArr).index;
+					curent.style.position="absolute";
+					curent.style.left=aContent[minIndex].offsetLeft+"px";
+					curent.style.top=minHeight+"px";
+					//更新最小高度
+					heightArr[minIndex]=heightArr[minIndex]+curent.offsetHeight;
+					//console.log(heightArr);
+				}
+			});
+		};
+        //ES6
+		//获取子集空间
+        const getChilds =(child) =>{
+            const childArr=[];
+			tagsAll=oPorent.getElementsByTagName("*");
+			/*//console.log(tagsAll);
+			//console.log([...tagsAll]);//扩展运算符*/
+            [...tagsAll].forEach((curent,index)=>{
+				//console.log(curent);
+				if(curent.className==child){
+				    childArr.push(curent);
+				}
+			});
+		return childArr;
+		};
+    	/* function getMinIndex(heightArr,minHeight) {
+		for(var i in heightArr){
+		    if (heightArr[i]==minHeight){
+
+		        return i;
+				}
+
+			}
+        }*/
+       // getChilds("box-img");
+		/*    // var arr=[1,2,3];
+        // arr.forEach((current,index,arry)=>{
+        //     console.log(current,index,arry)
+        // });*/
+		//var arr=[1,2,3,4];
+		const  minImgIndex = (arr) =>{
+		    return arr.reduce((a,b,index) =>{
+                 console.log(a,b,index);
+
+		        if (b<=a.val){
+		            a.val=b;
+		            a.index=index;
+				}
+				return a;
+			},{val:arr[0],index:[0]})
+
+		};
+        // minImageIndex();
+		/*
+
+		ES5与ES6的区别
+		https://blog.csdn.net/changsimeng/article/details/62883952
+		扩展运算符
+		https://blog.csdn.net/qq_30100043/article/details/53391308
+		页面实时加载
+		https://blog.csdn.net/mytream/article/details/80091763
+		*/
+	</script>
+	</body>
+</html>

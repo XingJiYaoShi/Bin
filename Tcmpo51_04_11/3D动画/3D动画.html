@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+
+        #box {
+            width: 550px;
+            height: 550px;
+            margin:50px auto 0;
+            /*z轴的长度*/
+            perspective: 2000px;
+            position: relative;
+
+        }
+
+
+        #box .pic {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: aaa 100s linear infinite alternate;
+        }
+        #box .pic li{
+            width:500px;
+            height:500px;
+            position: absolute;
+
+        }
+        #box .pic li img{
+            width: 400px;
+            height:400px;
+
+        }
+        @keyframes aaa {
+            from{
+                width: 400px;
+                height: 400px;
+                background-size:380px 380px ;
+                margin:50px auto;
+                transform: rotateY(720deg)  rotateX(630deg);
+            }
+            to{
+                width: 400px;
+                height: 400px;
+                background-size:380px 380px ;
+                margin:50px auto;
+                transform: rotateY(-720deg)  rotateX(-630deg););
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul class="pic">
+        <li style="transform: rotateY(90deg) translateZ(275px)"><img src="image/5.jpg" alt=""></li>
+        <li style="transform: rotateY(-90deg) translateZ(275px)"><img src="image/2.jpg" alt=""></li>
+        <li style="transform: rotateX(90deg) translateZ(275px)"><img src="image/3.jpg" alt=""></li>
+        <li style="transform: rotateX(-90deg) translateZ(275px)"><img src="image/6.jpg" alt=""></li>
+        <li style="transform:translateZ(-275px)"><img src="image/4.jpg" alt=""></li>
+        <li style="transform:translateZ(275px)"><img src="image/1.jpg" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

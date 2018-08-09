@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+    <style>
+        .bg {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<input type="text" v-model="word" @keyup="requestBaidu($event)" @keydown.up="up()" @keydown.down="down()">
+<ul>
+    <li v-for="(item,index) in result" :class="{bg:index==iNow}">{{item}}</li>
+</ul>
+
+</div>
+<script>
+    new Vue({
+       el:"#app",
+       data:{
+           word:"",
+           result:[],
+           iNow:-1,
+       },
+       methods:{
+           requestBaidu:function (ev) {
+               if (ev.keyCode == 38 || ev.keyCode == 40) {
+                   return;
+               }
+               //https://www.baidu.com/s?wd=%E7%83%A4%E9%9D%A2%E7%AD%8B
+               if (ev.keyCode == 13) {
+                   window.open("https://www.baidu.com/s?wd="+this.word);
+
+                   return;
+
+               }
+              this.$http.jsonp("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su",
+                  {wd: this.word},
+                  {jsonp: "cb"},).then(function (data) {
+                  this.result = data.data.s;
+              },function (err) {
+                  console.log(err);
+              });
+          }
+
+       },
+        up: function () {
+           alert("sdsadsaddsds");
+            this.iNow--;
+            if (this.iNow < -1) {
+                this.iNow = this.result.length - 1;
+
+            }
+            this.word = this.result[this.iNow];
+
+        },
+        down: function () {
+            this.iNow++;
+
+            if (this.iNow > this.result.length) {
+                this.iNow = 0;
+
+            }
+        }
+
+
+    });
+
+</script>
+</body>
+</html>

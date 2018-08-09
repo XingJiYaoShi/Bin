@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #ffb100;
+            position: absolute;
+        }
+        #boxTwo{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box" title="哈哈哈" onmousedown="downFun()" onmouseup="upFun()" onmousemove="" onmouseover=""></div>
+<div id="boxTwo" title="哈哈哈" onmousedown="downFun1()" onmouseup="upFun1()"></div>
+
+<!--
+    1:先点击
+      拖动
+
+-->
+
+<script>
+    var oBox = document.getElementById("box");
+    var oBox1=document.getElementById("boxTwo")
+    //点击
+    function downFun() {
+        //拖动
+        //ie不支持
+
+        //onmouseover
+        //onmousemove
+        document.onmousemove = function (ev) {
+            var oEvent = ev || event;
+            // console.log(oEvent);
+            //1:
+            var clientX = oEvent.clientX; // 鼠标的坐标
+            var clientY = oEvent.clientY; // 鼠标的坐标
+
+            //获取中心的位置  取值的方法   oBox.offsetLeft
+            var width = oBox.offsetWidth;
+            var height = oBox.offsetHeight;
+            console.log(width);
+
+            //2:  oBox.style.left 只能被赋值
+            //  oBox.style.left
+            oBox.style.left = clientX - width / 2 + "px";//oBox.属性
+            oBox.style.top = clientY - height / 2 + "px";//oBox.属性
+            oBox.style.zIndex="10";
+            oBox1.style.zIndex="0";
+            //3:
+        };
+
+
+    }
+
+    function upFun() {
+        document.onmousemove = null;
+        document.up = null;
+    }
+    function downFun1() {
+        //拖动
+        //ie不支持
+
+        //onmouseover
+        //onmousemove
+        document.onmousemove = function (ev) {
+            var oEvent = ev || event;
+            // console.log(oEvent);
+            //1:
+            var clientX = oEvent.clientX; // 鼠标的坐标
+            var clientY = oEvent.clientY; // 鼠标的坐标
+
+            //获取中心的位置  取值的方法   oBox.offsetLeft
+            var width = oBox1.offsetWidth;
+            var height = oBox1.offsetHeight;
+            console.log(width);
+
+            //2:  oBox.style.left 只能被赋值
+            //  oBox.style.left
+            oBox1.style.left = clientX - width / 2 + "px";//oBox.属性
+            oBox1.style.top = clientY - height / 2 + "px";//oBox.属性
+            oBox1.style.zIndex="10";
+            oBox.style.zIndex="1";
+            //3:
+        };
+    }
+
+    function upFun1() {
+        document.onmousemove = null;
+        document.up = null;
+    }
+
+</script>
+</body>
+</html>

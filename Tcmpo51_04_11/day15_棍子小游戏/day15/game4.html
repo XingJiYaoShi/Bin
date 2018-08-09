@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li{
+            list-style: none;
+        }
+        body {
+            background-image: url("images/BG.png");
+        }
+
+        #btn {
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        /*margin: 0 auto; 块级元素*/
+        .btn {
+            width: 100px;
+            height: 105px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-image: url("images/btn.png");
+        }
+
+        .bottom {
+            position: fixed;
+            bottom: 0;
+            height: 35%;
+        }
+
+        .wall {
+            width: 50px;
+            height: 100%;
+            position: absolute;
+            background-color: #0f0f0f;
+        }
+
+        .leftWall {
+            left: 0;
+        }
+
+        .rightWall {
+            left: 400px;
+        }
+
+        .man {
+            position: absolute;
+
+        }
+
+        .man img {
+            position: absolute;
+            bottom: 100%;
+        }
+
+        .gun {
+            position: absolute;
+            width: 0px;
+            height: 5px;
+            background-color: #1fc122;
+            transform: rotate(-90deg);
+            left: 50px;
+            /**/
+            transform-origin: 0 100%;
+
+        }
+
+        .rotateGun {
+            transform: rotate(0);
+            transition: all 1s linear;
+
+        }
+        .paiming{
+            color: white;
+            width: 200px;
+            background: #000;
+            opacity: 0.3;
+            position: absolute;
+            top: 80px;
+            left: 1000px;
+            /*text-align: left;*/
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<div id="container">
+    <div id="btn">
+        <div class="btn"></div>
+        <div>最高分为: <span class="maxGrade"></span></div>
+        
+        <div class="paiming">
+            <ul>
+                <li>分数排行</li>
+                <li>1.<span class="maxGrade"></span></li>
+                <li>2.<span class="Grade2"></span></li>
+                <li>3.<span class="Grade3"></span></li>
+                <li>4.<span class="Grade4"></span></li>
+                <li>5.<span class="Grade5"></span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="man"><img class="ren" src="images/stick_stand2.png" alt=""></div>
+        <div class="gun"></div>
+
+
+        <div class="wall leftWall"></div>
+        <div class="wall rightWall"></div>
+
+    </div>
+
+</div>
+<script>
+    (function () {
+        var isPress = true;
+        var grade = 0;
+        var maxGrade1=localStorage.getItem("grade");
+        var Grade2=localStorage.getItem("grade2");
+        var Grade3=localStorage.getItem("grade3");
+        var Grade4=localStorage.getItem("grade4");
+        var Grade5=localStorage.getItem("grade5");
+        if(maxGrade1==null){
+            $(".maxGrade").html(grade);
+            localStorage.setItem("grade",grade);
+        }
+        if(Grade2==null){
+            $(".Grade2").html(grade);
+            localStorage.setItem("grade2",grade);
+        }
+        if(Grade3==null){
+            $(".Grade3").html(grade);
+            localStorage.setItem("grade3",grade);
+        }
+        if(Grade4==null){
+            $(".Grade4").html(grade);
+            localStorage.setItem("grade4",grade);
+        }
+        if(Grade5==null){
+            $(".Grade5").html(grade);
+            localStorage.setItem("grade5",grade);
+        }
+        $(".maxGrade").html(maxGrade1);
+        $(".Grade2").html(Grade2);
+        $(".Grade3").html(Grade3);
+        $(".Grade4").html(Grade4);
+        $(".Grade5").html(Grade5);
+        $(".btn").mousedown(function () {
+            if (isPress) {
+                $(".gun").animate({"width": 500}, 2000);
+                $(".btn").css("background","images/btn-bg.png");
+            }
+        });
+        $(".btn").mouseup(function () {
+            $(".btn").css("background","images/btn-bg.png");
+            $(".gun").stop();
+            isPress = false;
+
+            //向下倒
+            $(".gun").addClass("rotateGun");
+
+            setTimeout(function () {
+                //小人跑起来
+                $(".ren").attr("src", "images/stick2.gif");
+                var gunWidth = $(".gun").width();
+
+                //墙的距离
+                var left = $(".rightWall").offset().left;
+
+                $(".ren").animate({"left": gunWidth}, 1500, function () {
+                    //成功  失败
+                    if (gunWidth <= left && gunWidth >= left - 50) {
+                        //1:刷新墙的位置 <50 xx <500
+                        //2:分数+10
+                        //3:小人 图片 站着的 回到最左边
+                        //4:棍棍的宽度 0  移除类
+                        //5:true
+
+                        var random = Math.random() * 450 + 50;//0--1
+                        $(".rightWall").css("left", random);
+                        grade += 10;
+                        $(".ren").attr("src", "images/stick_stand2.png");
+                        $(".ren").css("left", 0);
+                        $(".gun").css("width", 0);
+                        $(".gun").removeClass("rotateGun");
+                        isPress = true;
+                    } else {
+                        $(".man").animate({"bottom": 0}, 1500, function () {
+                            //2:谈一个框
+                            alert("you grade is " + grade + "分");
+                            var maxGrade= localStorage.getItem("grade");
+                            var Grade22= localStorage.getItem("grade2");
+                            var Grade33= localStorage.getItem("grade3");
+                            var Grade44= localStorage.getItem("grade4");
+                            var Grade55= localStorage.getItem("grade5");
+
+                            // localStorage.setItem('grade-score',JSON.stringify(grade));
+                            if(maxGrade<grade){
+                                localStorage.setItem("grade",grade);
+                            }else if (Grade22<grade) {
+                                localStorage.setItem("grade2",grade);
+                            }else if (Grade33<grade) {
+                                localStorage.setItem("grade3",grade);
+                            }else if (Grade44<grade) {
+                                localStorage.setItem("grade4",grade);
+                            }else if (Grade55<grade) {
+                                localStorage.setItem("grade5",grade);
+                            }else{
+                                $(".maxGrade").html(maxGrade);
+                            }
+                            //1:页面刷新
+                            location.reload();
+                        })
+
+                    }
+                });
+            }, 1000);
+        });
+        // function $(o){return document.getElementById(o)}
+        // function makeArray( obj ){
+        //     var arr = [];
+        //     for ( var i = 0, len = obj.length; i < len; i++ ){
+        //         arr.push(obj[i]);
+        //     }
+        //     return arr;
+        // }
+        // function asc( x, y ){
+        //     return parseInt( y.innerHTML ) - parseInt( x.innerHTML );
+        // }
+        //
+        // function makeOrder( wrapper, obj, order ){
+        //     var order = order || 'asc';
+        //     var wrapper = $( wrapper );
+        //     var obj = wrapper.getElementsByTagName( obj );
+        //     var arr;
+        //     arr = makeArray( obj );
+        //     if ( order == 'asc' ){
+        //         arr.sort( asc );
+        //     } else {
+        //         arr.sort( asc ).reverse();
+        //     }
+        //     for( var i = 0, len = arr.length; i < len; i++ ){
+        //         wrapper.appendChild( arr[i].parentNode )
+        //     }
+        // }
+        //
+        // makeOrder( 'ul', grade, 'asc' );
+    })()
+</script>
+</body>
+</html>

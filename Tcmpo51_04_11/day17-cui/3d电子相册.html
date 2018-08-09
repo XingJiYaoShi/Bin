@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        .container{
+            margin: 4% auto;
+            width: 210px;
+            height: 140px;
+            position: relative;
+            perspective: 500px;
+            -webkit-perspective: 500px;
+        }
+        #carousel{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: aa 20s infinite linear;
+            /*animation-name（需要绑定到选择器的 keyframe 名称）：rotation的动画*/
+            /*animation-duration（完成动画所花费的时间）：20s*/
+            /*animation-iteration-count（动画应该播放的次数）：infinite（无限次）*/
+            /*animation-timing-function(动画的速度曲线)：linear（动画从头到尾的速度是相同的*/
+
+
+
+            /*1、ease：（逐渐变慢）默认值，ease函数等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0).*/
+
+            /*2、linear：（匀速），linear 函数等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0).*/
+
+            /*3、ease-in：(加速)，ease-in 函数等同于贝塞尔曲线(0.42, 0, 1.0, 1.0).*/
+
+            /*4、ease-out：（减速），ease-out 函数等同于贝塞尔曲线(0, 0, 0.58, 1.0).*/
+
+            /*5、ease-in-out：（加速然后减速），ease-in-out 函数等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)*/
+
+            /*6、cubic-bezier：（该值允许你去自定义一个时间曲线）， 特定的cubic-bezier曲线。 (x1, y1, x2, y2)四个值特定于曲线上点P1和点P2。所有值需在[0, 1]区域内，否则无效。*/
+
+
+        }
+        #carousel:hover{
+            /*animation-play-state 属性规定动画正在运行还是暂停。*/
+            /*paused 规定动画已暂停。*/
+            /*running 规定动画正在播放*/
+            animation-play-state: paused;
+        }
+        #carousel figure{
+            display: block;
+            position: absolute;
+            width: 186px;
+            height: 116px;
+            left: 10px;
+            top: 30px;
+            background: black;
+            overflow: hidden;
+            border: solid 5px black;
+        }
+
+        #carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(300px);}
+        #carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(300px);}
+        #carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(300px);}
+        #carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(300px);}
+        #carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(300px);}
+        #carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(300px);}
+        #carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(300px);}
+        #carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(300px);}
+        #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(300px);}
+
+        img{
+            -webkit-filter: grayscale(1);
+            cursor: pointer;
+            transition: all .5s ease;
+        }
+        img:hover{
+            -webkit-filter: grayscale(0);
+            transform: scale(1.2,1.2);
+        }
+
+        @keyframes aa{
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body background="img/tu1.jpg" style="width: 100%">
+
+
+<div class="container">
+    <div id="carousel">
+        <figure><img src="img/9.jpg" alt=""></figure>
+        <figure><img src="img/10.jpg" alt=""></figure>
+        <figure><img src="img/9.jpg" alt=""></figure>
+        <figure><img src="img/10.jpg" alt=""></figure>
+        <figure><img src="img/k.jpg" alt=""></figure>
+        <figure><img src="img/Q.jpg" alt=""></figure>
+        <figure><img src="img/k.jpg" alt=""></figure>
+        <figure><img src="img/Q.jpg" alt=""></figure>
+        <figure><img src="img/9.jpg" alt=""></figure>
+    </div>
+</div>
+</body>
+</html>

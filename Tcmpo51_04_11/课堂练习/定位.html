@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        #a{
+    width: 200px;
+    height: 200px;
+            background-color: #ed0000;
+        }
+        #b{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            background-color: chartreuse;
+            /*z-index: -1;*/
+            left: 201px;
+        }
+        #b_1{
+
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            background-color: #208EDA;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+<div style="height: 10000px;background-color: aquamarine">
+<div id="b">
+    <div id="b_1">我是广告</div>
+
+</div>
+<div id="a"></div>
+</div>
+</body>
+</html>

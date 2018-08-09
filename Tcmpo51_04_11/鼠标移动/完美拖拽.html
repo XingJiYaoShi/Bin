@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        .box1 {
+            position: absolute;
+             text-align: center;
+            left: 100px;
+            top: 50px;
+            -webkit-transform: rotate(20deg);
+            -moz-transform: rotate(20deg);
+            transform: rotate(20deg);
+        }
+
+        .box2 {
+            position: absolute;
+             text-align: center;
+            left: 200px;
+            top: 60px;
+            -webkit-transform: rotate(-10deg);
+            -moz-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+        }.box3 {
+                     position: absolute;
+             text-align: center;
+            left: 400px;
+            top: 45px;
+            -webkit-transform: rotate(60deg);
+            -moz-transform: rotate(60deg);
+            transform: rotate(60deg);
+        }.box4 {
+                              position: absolute;
+             text-align: center;
+            left: 520px;
+            top: 55px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+        .box5 {
+            position: absolute;
+             text-align: center;
+            left: 200px;
+            top: 200px;
+            -webkit-transform: rotate(-10deg);
+            -moz-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+        }
+  .box6 {
+      position: absolute;
+             text-align: center;
+            left: 800px;
+            top: 300px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+    </style>
+</head>
+<body>
+<div id="content" style="background-image: url('image/25561d2f3e887c7.jpg')">
+<div class="box box1"><img src="image/mm1.jpg" alt="" width="256" height="191"></div>
+<div class="box box2"><img src="image/mm2.jpg" alt=""  width="256" height="191"></div>
+<div class="box box3"><img src="image/mm3.jpg" alt="" width="195" height="256"></div>
+<div class="box box4"><img src="image/mm4.jpg" alt="" width="256" height="192"></div>
+<div class="box box5"><img src="image/mm5.jpg" alt="" width="196" height="256"></div>
+<div class="box box6"><img src="image/mm6.jpg" alt="" width="256" height="187"></div>
+<div class="box box7"><img src="image/mm7.jpg" alt="" width="205" height="256"></div>
+<div class="box box8"><img src="image/mm8.jpg" alt="" width="256" height="171"></div>
+<div class="box box9"><img src="image/mm9.jpg" alt="" width="171" height="256"></div>
+<div class="box box10"><img src="image/mm10.jpg" alt="" width="256" height="188"></div>
+</div>
+<script src="js/drag.js"></script>
+
+<script>
+
+    var oBox1 = document.getElementsByClassName("box")[0];
+    var oBox2 = document.getElementsByClassName("box")[1];
+    var oBox3 = document.getElementsByClassName("box")[2];
+    var oBox4 = document.getElementsByClassName("box")[3];
+    var oBox5 = document.getElementsByClassName("box")[4];
+    var oBox6 = document.getElementsByClassName("box")[5];
+    var oBox7= document.getElementsByClassName("box")[5];
+    var oBox8 = document.getElementsByClassName("box")[5];
+    var oBox9= document.getElementsByClassName("box")[5];
+    var oBox10 = document.getElementsByClassName("box")[5];
+    dragDom(oBox1, 200, 200, function (x, y) {
+        console.log(x, y);
+        return {x: x, y: y}
+    });
+    dragDom(oBox2, 300, 300);
+    dragDom(oBox3, 400, 400);
+    dragDom(oBox4, 500, 500);
+    dragDom(oBox5, 100, 200);
+    dragDom(oBox6, 300, 100);
+    dragDom(oBox8, 300, 100);
+    dragDom(oBox9, 300, 100);
+    dragDom(oBox7, 300, 100);
+    dragDom(oBox10, 300, 100);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>我是头部</h1>
+<button class="btn2">头部按钮</button>
+</body>
+
+<script>
+    (function () {
+        var a = 20;
+        var btn1 = document.getElementsByClassName("btn2")[0];
+        btn1.onclick = function () {
+            alert(a);
+        };
+    })()
+</script>
+</html>

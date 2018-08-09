@@ -1,0 +1,54 @@
+
+展示效果
+1
+2
+3
+
+回顾:
+  jquery 游戏
+  jquery:
+    .css({"width":100,"height": left}) 元素的样式
+    .animate({},200,function(){})
+    .addClass("")
+    .html()
+    .text()
+
+  css动画:
+    transform rotate(deg)
+  布局:  定位  居中
+    居中:
+     text-align: 行内/行内块
+     块级:margin 0 auto
+
+     padding
+     定位
+
+
+  这节课:
+    框架:   js+html+css: 页面级开发
+            : 应用级开发
+
+
+    模块化+单页面+打包  html+css+js
+       1:指令 v-xx 省去了dom操作
+              react-xxx
+              ng-xxx
+       2:数据绑定
+             new Vue({
+                data:{
+                }
+             })
+    react  : MVVM
+    angular: MVVM  3万多 google
+    vue    : MVVM  9万多 中国 台湾
+      1:中国人开发的
+      2:angular先开发的
+      3:angular第一个版本
+
+    作业1:今晚:
+    作业2:课堂代码 4遍
+
+    作业3:项目
+    作业4:属性: vue指令 8遍
+
+

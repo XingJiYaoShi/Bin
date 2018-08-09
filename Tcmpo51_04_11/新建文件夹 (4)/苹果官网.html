@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>苹果官网</title>
+    <link rel="stylesheet" href="font/iconfont.css"/>
+    <link rel="stylesheet" href="css/iphone.css"/>
+    <style>
+        @media screen and (min-width: 750px) and (max-width: 1100px){
+            .main_img{
+                width: 649px;
+                height: 136px;
+                overflow: hidden;
+                background: url("image/img2.jpg");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+            }
+            .title{
+                font-size: 2rem;
+            }
+            .title_2{
+                font-size: 1.1rem;
+            }
+            #box .icon-gouwu{
+                color: #fff;
+                flex:1;
+                text-align: right;
+                margin: 0 20px;
+            }
+            #box .icon-iphone{
+                color: #fff;
+                flex: 1;
+                text-align: left;
+                margin: 0 20px;
+            }
+            #red{
+                height: 560px;
+            }
+            .red_img{
+                background: url("image/hero_medium.png");
+                width: 320px;
+                height: 327px;
+                position: relative;
+                top: 65px;
+            }
+            .red_title{
+                margin-top: 70px;
+                font-size: 2.5rem;
+                font-weight: bolder;
+                color: white;
+            }
+            .red_title_2{
+                color: white;
+                font-size: 1.2rem;
+                padding: 20px 20px;
+                position: relative;
+                top: 10px;
+            }
+            .ipad_title {
+                font-size: 2.5rem;
+                font-weight: bolder;
+                padding-top: 45px;
+            }
+            .ipad_title_2{
+                font-size: 1.2rem;
+                padding-bottom: 40px;
+            }
+            .ipad_img{
+                width: 736px;
+                height: 384px;
+                margin: 0 auto;
+                background: url("image/ipad2.jpg");
+            }
+            #xia{
+                height:auto;
+            }
+            .one,.two,.three,.four,.five,.six{
+                height: 490px;
+            }
+            .one_title{
+                font-size: 2rem;
+                padding-top: 30px;
+            }
+            .one_img{
+                width: 350px;
+                height: 380px;
+                /*border: 1px solid #000000;*/
+                background: url("image/macbook2.jpg");
+            }
+
+            .two_title{
+                width: 105px;
+                height: 39px;
+                position: relative;
+                top: 30px;
+                background: url("image/watch2.png");
+            }
+            .two_title2{
+                margin-top: 35px;
+            }
+            .two_img{
+                width: 375px;
+                height: 364px;
+                background: url("image/watch_series2.jpg");
+            }
+            .three{
+                background: url("image/xinIphone2.jpg");
+                background-position: 0 0;
+            }
+            .four{
+                background: url("image/music_three2.jpg");
+                background-position: -0 0;
+            }
+            .four_title{
+                width: 107px;
+                height: 27px;
+                background: url("image/music2.png");
+            }
+            .five{
+                /*border: 1px solid #0000FF;*/
+                background: url("image/jiaotong2.jpg");
+                background-position: -20px 0;
+            }
+            .five_logo {
+                width: 77px;
+                height: 32px;
+                position: relative;
+                top: 60px;
+                background: url("image/pay2.jpg");
+            }
+            .five_title{
+                font-size: 1.7rem;
+                font-weight: bolder;
+                margin-top: 65px;
+                margin-bottom: 15px;
+            }
+            .six{
+                /*border: 1px solid #0000FF;*/
+                background: url("image/giveback2.jpg");
+                background-position: 0 0;
+            }
+            .six_title{
+                font-size: 2rem;
+                font-weight: bolder;
+                width: 255px;
+                margin: 0 auto;
+                margin-top: 60px;
+                margin-bottom: 15px;
+            }
+            .jin{
+                color: #4970cb;
+                margin-top: 10px;
+            }
+            #foot1{
+                width: 96%;
+                margin: 0 1%;
+                color: #8b8b8b;
+                font-size: 10px;
+            }
+        }
+        @media screen and (max-width: 750px){
+            .main_img{
+                width: 167px;
+                height: 333px;
+                overflow: hidden;
+                background: url("image/img3.jpg");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+            }
+            #box{
+                background-color: #333;
+
+            }
+            #box .icon-caidan{
+                opacity: 1;
+                flex: 1;
+                text-align: left;
+                margin: 0 20px;
+                display: inline-block;
+            }
+            #box .icon-iphone{
+                text-align: center;
+                margin: 0 20px;
+            }
+            .title{
+                font-size: 1.8rem;
+            }
+            .title_2{
+                font-size: 1.1rem;
+                margin-bottom: 30px;
+            }
+            #box .icon-gouwu{
+                color: #fff;
+                flex:1;
+                text-align: right;
+                margin: 0 20px;
+            }
+            #red{
+                height: 500px;
+            }
+            .red_img{
+                background: url("image/hero_small.png");
+                background-repeat: no-repeat;
+                width: 282px;
+                height: 327px;
+                margin: 0 auto;
+                position: relative;
+                top: 4px;
+            }
+            .tbb{
+                padding: 2px 2px;
+                position: relative;
+                top: 40px;
+                border-radius: 3px;
+            }
+            .red_title{
+                width: 220px;
+                margin: 0 auto;
+                margin-top: 50px;
+                font-size: 1.8rem;
+            }
+            .red_title_2{
+                font-size: 1rem;
+                padding: 20px 15px;
+            }
+            #ipad{
+                height: 500px;
+                background-color: #f5f5f5;
+                margin-top: 15px;
+                text-align: center;
+            }
+            .ipad_title {
+                font-size: 2rem;
+                font-weight: bolder;
+                padding-top: 45px;
+            }
+            .ipad_title_2{
+                font-size: 1rem;
+                padding-bottom: 5px;
+                width: 160px;
+                margin: 0 auto;
+            }
+            .ipad_img{
+                width: 320px;
+                height: 367px;
+                background: url("image/ipad3.jpg");
+            }
+            #xia{
+                height:auto;
+                margin-bottom: 15px;
+            }
+
+            .one,.two,.three,.four,.five,.six{
+                margin: 0;
+                width: 99%;
+                height: 500px;
+                display: block;
+            }
+            .one_title{
+                font-size: 2rem;
+                font-weight: bolder;
+                padding-top: 35px;
+            }
+            .one_img{
+                width: 320px;
+                height: 380px;
+                /*border: 1px solid #000;*/
+                background: url("image/macbook3.jpg");
+                background-position: 0 -80px;
+            }
+            .two_title{
+                width: 105px;
+                height: 39px;
+                position: relative;
+                top: 15px;
+                background: url("image/watch2.png");
+            }
+            .two_title2{
+                margin-top: 25px;
+            }
+            .two_img{
+                width: 347px;
+                height: 387px;
+                background: url("image/watch_series3.jpg");
+            }
+            .three{
+                background: url("image/xinIphone3.jpg");
+                background-position: -50px 0;
+            }
+            .three_title{
+                font-size: 1.8rem;
+            }
+            .four{
+                background: url("image/music_three3.jpg");
+                background-position: -50px 0;
+            }
+            .four_title{
+                width: 103px;
+                height: 26px;
+                position: relative;
+                top: 65px;
+                background: url("image/music3.png");
+            }
+            .four_title2{
+                position: relative;
+                top: 75px;
+                color: white;
+            }
+            .five{
+                background: url("image/jiaotong3.jpg");
+                background-position: -80px 0;
+            }
+            .five_logo {
+                width: 73px;
+                height: 32px;
+                background: url("image/pay3.jpg");
+            }
+            .five_title{
+                font-size: 1.8rem;
+                font-weight: bolder;
+                margin-top: 65px;
+                margin-bottom: 15px;
+            }
+            .six{
+                background: url("image/giveback3.jpg");
+                background-position: -50px 0;
+            }
+            .six_title{
+                font-size: 1.6rem;
+                font-weight: bolder;
+                width: 310px;
+                margin: 0 auto;
+                margin-top: 60px;
+                margin-bottom: 15px;
+            }
+            #foot1{
+                width: 96%;
+                margin: 0 1%;
+                color: #8b8b8b;
+                font-size: 10px;
+            }
+            table{
+                display: none;
+            }
+            .table2{
+                display: block;
+                font-size: 12px;
+                width: 96%;
+                margin: 0 auto;
+                color: #333;
+            }
+            .table2 li{
+                height: 40px;
+                line-height: 40px;
+                border-bottom: 1px solid #d6d6d6;
+                vertical-align: center;
+            }
+            .table2 li span{
+                /*border: 1px solid #000;*/
+                float: right;
+                margin-right: 20px;
+            }
+            .table2 li:hover{
+                cursor: pointer;
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <i class="iconfont icon-caidan"></i>
+    <i class="iconfont icon-iphone"></i>
+    <i class="iconfont icon-gouwu"></i>
+</div>
+<div id="main">
+    <p class="title">iPhone X</p>
+    <p class="title_2">hello，未来。</p>
+    <div class="main_img"></div>
+
+</div>
+<div id="red">
+    <span class="tbb">特别版</span>
+    <p class="red_title">iPhone 8，现更以红色呈现。</p>
+    <span class="red_title_2">进一步了解>  </span><span class="red_title_2">  购买></span>
+    <div class="red_img"></div>
+</div>
+
+<div id="ipad">
+    <p class="ipad_title">iPad</p>
+    <p class="ipad_title_2">这个电脑，拿掉了电脑的条条框框</p>
+    <div class="ipad_img"></div>
+</div>
+
+<div id="xia">
+    <div class="one">
+        <p class="one_title">MacBook Pro</p>
+        <p>一身才华，一触，即发。</p>
+        <div class="one_img"></div>
+    </div>
+    <div class="two">
+        <div class="two_title"></div>
+        <p class="two_title2">带上自由，戴上蜂窝网络。</p>
+        <div class="two_img"></div>
+    </div>
+
+    <div class="three">
+        <p class="three_title">iPhone年年换新计划</p>
+        <p>每年都有一部iPhone,</p>
+        <p>并享受AppleCare+ 全方位服务计划。</p>
+    </div>
+
+    <div class="four">
+        <div class="four_title"></div>
+        <p class="four_title2">数百万首歌曲，三个月尽情试听。</p>
+    </div>
+
+    <div class="five">
+        <div class="five_logo"></div>
+        <p class="five_title">现支持北京、上海交通卡。</p>
+        <p class="five_title2">升级至最新版iOS及watchOS即可体验。</p>
+    </div>
+
+    <div class="six">
+        <p class="six_title">Apple GiceBack回馈计划</p>
+        <p>以旧换新，更有新方法。</p>
+        <p class="jin">进一步了解></p>
+    </div>
+</div>
+<div id="foot">
+    <table>
+        <tr>
+            <th>选购及了解</th>
+            <th>Apple Store 商店</th>
+            <th>教育应用</th>
+            <th>账户</th>
+            <th>关于 Apple</th>
+        </tr>
+        <tr>
+            <td>Mac</td>
+            <td>查找零售店</td>
+            <td>Apple 与教育</td>
+            <td>管理你的 Apple ID</td>
+            <td>Newsroom</td>
+        </tr>
+        <tr>
+            <td>iPad</td>
+            <td>Genius Bar 天才吧</td>
+            <td>高校师生选购</td>
+            <td>Apple Store 账户</td>
+            <td>Apple 管理层</td>
+        </tr>
+        <tr>
+            <td>iPhone</td>
+            <td>Today at Apple</td>
+            <td></td>
+            <td>iCloud.com</td>
+            <td>工作机会</td>
+        </tr>
+        <tr>
+            <td>Watch</td>
+            <td>Apple 夏令营</td>
+            <th>商务应用</th>
+            <td></td>
+            <td>活动</td>
+        </tr>
+        <tr>
+            <td>Music</td>
+            <td>Field Trip 课外活动</td>
+            <td>Apple 与商务</td>
+            <th>Apple 价值观</th>
+            <td>联系 Apple</td>
+        </tr>
+        <tr>
+            <td>iTunes</td>
+            <td>Apple Store App</td>
+            <td>商务选购</td>
+            <td>辅助功能</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>iPod touch</td>
+            <td>翻新和优惠</td>
+            <td></td>
+            <td>环境责任</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>配件</td>
+            <td>分期付款</td>
+            <td></td>
+            <td>隐私</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>App Store充值卡</td>
+            <td>Apple GiveBack 回馈计划</td>
+            <td></td>
+            <td>供应商责任</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>订单状态</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>选购帮助</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+    <ul class="table2">
+        <li>选购及了解<span>+</span></li>
+        <li>Apple Store 商店<span>+</span></li>
+        <li>教育应用<span>+</span></li>
+        <li>商务应用<span>+</span></li>
+        <li>账户<span>+</span></li>
+        <li>Apple 价值观	<span>+</span></li>
+        <li>关于 Apple<span>+</span></li>
+    </ul>
+    <div id="foot1">
+        <p class="f1">更多选购方式：前往 <span>Apple Store 零售店</span>，致电 400-666-8800 或查找在你附近的<span>授权经销商</span>。</p>
+        <hr/>
+        <p class="f2">Copyright © 2018 Apple Inc. 保留所有权利。</p>
+        <ul class="f3">
+            <li>隐私政策</li>
+            <li>使用条款</li>
+            <li>销售政策</li>
+            <li>法律信息</li>
+            <li>网站地图</li>
+        </ul>
+        <p class="f4">京公安网安备 11010502008968 京ICP备10214630</p>
+    </div>
+</div>
+</body>
+</html>

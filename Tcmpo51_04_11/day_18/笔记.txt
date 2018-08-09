@@ -1,0 +1,67 @@
+回顾:
+  vue 网络请求
+    vue-resource js
+    ajax:
+      1:导
+      2:this.$http.get/post/... ("地址",{}).then(1:成功,失败)
+
+  百度:
+    xxx(json):jsonp  跨域请求
+    协议+IP+端口 只要一部分不一样 就属于跨域
+    jsonp
+    代 理
+
+  vue
+    模块: 把页面分成很多部分 标签
+    组件: 把模块 封装起来
+    路由: 根据路径加载不同的组件 叫做路由
+
+  <div id= "app">
+    <aaa></aaa>
+    <main>
+  </div>
+
+
+  1:<template>
+    div
+  </template> 模块
+
+  2:vue 组件
+    components:{
+       "aaa":模块
+       "":
+       组件的key值
+
+     }
+
+
+路由:
+  1:<router-link to="/playlist">排行榜</router-link>
+   :<router-link to="/toplist">排行榜</router-link>
+   :<router-link to="/djradio">排行榜</router-link>
+
+  2:地址 和 组件关联
+    第三方 vue-router:
+    ①var router = new VueRouter({
+        routes:[
+            {path:"/playlist",component:AAA},
+            {path:"/toplist",component:BBB},
+            {path:"/djradio",component:CCC}
+        ]
+    })
+
+    ②new Vue({
+        router:router
+    })
+
+  3:<router-view></router-view>
+
+
+作业1:
+  路由+组件+模块 蝉游记效果
+作业2:
+  课堂代码 录屏4遍
+作业3:
+  网易云音乐 头部
+作业4:
+  上课前 讲技术

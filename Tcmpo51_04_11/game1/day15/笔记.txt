@@ -1,0 +1,40 @@
+回顾:
+  bootstrap
+   框架  2 3 4
+
+  css全局样式
+    button
+    table
+    image
+    form
+    栅格系统
+
+
+  组件
+    导航
+    选项卡
+    标题栏
+    按钮组
+    分页
+    提示
+
+
+  javascript插件库
+    1:模态框
+    2:轮播
+
+  h5
+  存储
+
+  name
+  pwd
+
+  对象
+  var obj = {name:"zhangsan"}
+
+  这节课:
+    1:熟悉jquery属性
+    2:css3动画
+    3:布局
+
+

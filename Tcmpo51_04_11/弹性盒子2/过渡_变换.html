@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /**
+        linear	规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。
+        ease	规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）。
+        ease-in	规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。
+        ease-out	规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。
+        ease-in-out	规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。
+        cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间
+
+
+         */
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: #cc00ff;
+            transition: all 100s   linear;
+            margin:100px auto;
+           position: relative;
+        }
+        #box2 {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #00ff17;
+            transition: all 100s   linear;
+
+        }
+        #box3 {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #eaff2b;
+            transition: all 100s   linear;
+
+        }  #box4 {
+               display: inline-block;
+               width: 100px;
+               height: 100px;
+               background-color: #1b12ff;
+               transition: all 100s   linear;
+
+           }  #box5 {
+                  display: inline-block;
+                  width: 100px;
+                  height: 100px;
+                  background-color: #f6faff;
+                  transition: all 100s   linear;
+
+              }
+
+        #box:hover {
+            /*transform: translate(200px,200px);*/
+            transform: rotate(100000deg) rotate(20deg) /* translate(200px,200px);*/
+            /*transform: scaleY(2)  rotate(20deg);*/
+            /*transform: skew(90deg,45deg);*/
+
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+<div id="box2">
+
+</div>
+    <div id="box3">
+
+    </div>
+    <div id="box4">
+
+    </div>
+    <div id="box5">
+
+    </div>
+</div>
+</body>
+</html>

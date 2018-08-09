@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/vue.js"></script>
+    <script src="js/vue-resource.js"></script>
+    <!--1:导入第三方
+        vue-resource.js
+    -->
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="word">
+    <!--v-on:  @  -->
+
+    <!--Access-Control-Allow-Origin : 跨域访问
+      网址:http:// 协议  www.baidu.com: ip:200.311.355 :端口:(80)
+
+      前后台分离开发:
+        解决:1:jsonp  xxx({dd:xxx})
+             2:请求头 "Access-Control-Allow-Origin","*"
+    -->
+
+    <button @click="getNetData()">请求</button>
+
+    <ul>
+        <li v-for="item in result">{{item}}</li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            word: "",
+            result:[],
+
+        },
+        methods: {
+            getNetData: function () {
+                //网络请求
+                this.$http.get("http://localhost:8080/vue", {word: this.word}).then(function (data) {
+                    console.log("成功");
+                    this.result = data.data;
+                }, function (err) {
+                    console.log("失败");
+                    console.log(err)
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>
